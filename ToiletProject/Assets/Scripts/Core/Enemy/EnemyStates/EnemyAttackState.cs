@@ -65,10 +65,8 @@ namespace Core.Enemy.EnemyStates
 
         private void RotateTowardsPlayer()
         {
-            var dir = _player.transform.position - _data.EnemyTransform.position;
             var rotSpeed = _data.RotateSpeed * Time.deltaTime;
-            Quaternion lookTowards = Quaternion.LookRotation(dir.normalized);
-            _data.EnemyTransform.rotation = Quaternion.RotateTowards(_data.EnemyTransform.rotation, lookTowards, rotSpeed);
+            _data.EnemyTransform.RotateTowardsByAxis(_player.transform, Vector3.up, rotSpeed);
         }
 
         public override void OnExit()

@@ -15,7 +15,6 @@ namespace Entity
         {
             InitStateMachine();
             InitStatesAndTransitions();
-            Init();
         }
 
         private void Update()
@@ -26,16 +25,14 @@ namespace Entity
         private void InitStateMachine()
         {
             _stateMachine = new StateMachine();
-            _stateMachine.SetState(StartState);
         }
 
-        public void AddTransition(IState from, IState to, IPredicate condition) =>
+        protected void AddTransition(IState from, IState to, IPredicate condition) =>
             _stateMachine.AddTransition(from, to, condition);
 
-        public void AddAnyTransition(IState to, IPredicate condition) => 
+        protected void AddAnyTransition(IState to, IPredicate condition) => 
             _stateMachine.AddAnyTransition(to, condition);
 
-        protected virtual void Init() {}
         protected abstract void InitStatesAndTransitions();
     }
 }

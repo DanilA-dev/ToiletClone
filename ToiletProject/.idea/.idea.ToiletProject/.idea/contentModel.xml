@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Data" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -312,8 +313,11 @@
           </e>
         </e>
         <e p="Resources" t="Include" />
-        <e p="Scenes" t="Include" />
+        <e p="Scenes" t="Include">
+          <e p="TestLevel" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
+          <e p="AppStart.cs" t="Include" />
           <e p="Core" t="Include">
             <e p="Enemy" t="Include">
               <e p="EnemyController.cs" t="Include" />
@@ -329,8 +333,27 @@
                 </e>
               </e>
             </e>
+            <e p="Level" t="Include">
+              <e p="LevelStage.cs" t="Include" />
+              <e p="LevelStageHandler.cs" t="Include" />
+            </e>
             <e p="Player" t="Include">
               <e p="PlayerController.cs" t="Include" />
+              <e p="PlayerStates" t="Include">
+                <e p="BasePlayerState.cs" t="Include" />
+                <e p="PlayerAttackState.cs" t="Include" />
+                <e p="PlayerBlockState.cs" t="Include" />
+                <e p="PlayerCombatState.cs" t="Include" />
+                <e p="PlayerMoveState.cs" t="Include" />
+                <e p="StateSerializeData" t="Include">
+                  <e p="PlayerCombatSerializeData.cs" t="Include" />
+                  <e p="PlayerMoveSerializeData.cs" t="Include" />
+                </e>
+              </e>
+              <e p="PlayerView.cs" t="Include" />
+            </e>
+            <e p="Signals" t="Include">
+              <e p="PlayerCoreAction.cs" t="Include" />
             </e>
           </e>
           <e p="Extensions-Helpers" t="Include">
@@ -340,6 +363,7 @@
               <e p="CountdownTimer.cs" t="Include" />
               <e p="IncrementTimer.cs" t="Include" />
             </e>
+            <e p="TransformExtensions.cs" t="Include" />
           </e>
           <e p="FSM" t="Include">
             <e p="FSM" t="Include">
@@ -356,10 +380,17 @@
               <e p="Entity.cs" t="Include" />
             </e>
           </e>
+          <e p="Scriptables" t="Include">
+            <e p="PlayerData.cs" t="Include" />
+          </e>
           <e p="Systems" t="Include">
+            <e p="CoreInitializer.cs" t="Include" />
             <e p="HealthSystem.cs" t="Include" />
           </e>
-          <e p="UI" t="Include" />
+          <e p="UI" t="Include">
+            <e p="UIAttackAction.cs" t="Include" />
+            <e p="UIBlockAction.cs" t="Include" />
+          </e>
         </e>
         <e p="Settings" t="Include" />
         <e p="TextMesh Pro" t="Include">

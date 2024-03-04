@@ -15,6 +15,7 @@ namespace Core.Enemy.EnemyStates
         public override void OnEnter()
         {
            Debug.Log("Enter chase state");
+           _serializeData.Agent.speed = _serializeData.Speed;
            _serializeData.Agent.isStopped = false;
            _serializeData.Agent.enabled = true;
            _serializeData.Agent.updateRotation = true;
