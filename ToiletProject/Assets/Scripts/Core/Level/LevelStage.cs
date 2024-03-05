@@ -22,6 +22,7 @@ namespace Core.Level
         public void Init(PlayerController playerController)
         {
             _enemies.ForEach(e => e.Init(playerController));
+            _enemies.ForEach(e => e.gameObject.SetActive(false));
             FindEnemiesHealthSystems();
             SubscribeToEnemyDeath();
         }

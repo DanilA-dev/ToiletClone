@@ -1,25 +1,32 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Systems;
 using Core.Player;
+using UniRx;
 using UnityEngine;
 
 namespace Core.Level
 {
     public class LevelStageHandler : MonoBehaviour
     {
-        [SerializeField] private int _currentStageIndex;
         [SerializeField] private List<LevelStage> _levelStages = new List<LevelStage>();
 
-        public void Init(PlayerController playerController)
+        private GameState _gameState;
+        
+        public void Init(PlayerController playerController, GameState gameState)
         {
+            _gameState = gameState;
+            
             foreach (var levelStage in _levelStages)
             {
                 levelStage.Init(playerController);
                 levelStage.OnStageClear += OnStageClear;
             }
-        }
 
-        public LevelStage GetCurrentStage() => _levelStages.Find(s => s.Index == _currentStageIndex);
+            var firstStage = GetNextStage();
+            firstStage.Activate();
+        }
+        public LevelStage GetCurrentStage() => _levelStages.Find(s => s.Index == _gameState.CurrentStage.Value);
         
         public LevelStage GetNextStage()
         {
@@ -28,11 +35,9 @@ namespace Core.Level
         
         private void OnStageClear(LevelStage stage)
         {
-            _currentStageIndex++;
+            _gameState.CurrentStage.Value++;
             if (stage.IsFinal)
-            {
-                //Win signal
-            }
+                MessageBroker.Default.Publish(new GameOverSignal(GameOverType.Win));
         }
       
     }

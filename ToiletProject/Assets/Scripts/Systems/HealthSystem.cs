@@ -9,8 +9,9 @@ namespace Systems
         [SerializeField] private int _health;
 
         public event Action OnDie;
+        public event Action<float, float> OnHealhChange;
         
-        public int CurrentHealth { get; set; }
+        public int CurrentHealth { get; private set; }
         public bool IsDead { get; private set; }
         public bool IsDamagable { get; private set; }
 
@@ -25,6 +26,7 @@ namespace Systems
                 return;
             
             CurrentHealth -= damageValue;
+            OnHealhChange?.Invoke(CurrentHealth, _health);
             if (CurrentHealth <= 0)
                 Die();
         }

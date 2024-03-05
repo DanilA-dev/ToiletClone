@@ -18,7 +18,7 @@ namespace Core.Player.PlayerStates
         public override void OnEnter()
         {
             Debug.Log("Enter combatState");
-            _view.Idle();
+            _view.Combat();
         }
 
         public void SetEnemy(EnemyController enemy)

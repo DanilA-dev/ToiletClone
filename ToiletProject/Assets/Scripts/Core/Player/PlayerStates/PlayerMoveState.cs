@@ -17,6 +17,7 @@ namespace Core.Player.PlayerStates
         public override void OnEnter()
         {
             Debug.Log("Enter move state");
+            _view.Run();
             _data.Agent.speed = _data.Speed;
             _data.Agent.enabled = true;
             _data.Agent.isStopped = false;

@@ -7,7 +7,66 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Animatons" t="Include">
+          <e p="Enemy" t="Include" />
+          <e p="Player" t="Include">
+            <e p="FBX" t="Include" />
+          </e>
+        </e>
+        <e p="AssetStore" t="Include">
+          <e p="SimplePoly - Town Pack" t="Include">
+            <e p="Materials" t="Include" />
+            <e p="Meshes" t="Include">
+              <e p="Buildings" t="Include" />
+              <e p="Nature" t="Include" />
+              <e p="Props" t="Include">
+                <e p="Animators" t="Include" />
+              </e>
+              <e p="RoadSegments" t="Include" />
+            </e>
+            <e p="Prefabs" t="Include">
+              <e p="Buildings" t="Include" />
+              <e p="Nature" t="Include" />
+              <e p="Props" t="Include" />
+              <e p="RoadSegments" t="Include" />
+            </e>
+            <e p="Standard Assets" t="Include">
+              <e p="Effects" t="Include">
+                <e p="ImageEffects" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="PostEffectsBase.cs" t="Include" />
+                    <e p="Quads.cs" t="Include" />
+                    <e p="SunShafts.cs" t="Include" />
+                  </e>
+                  <e p="Shaders" t="Include">
+                    <e p="SimpleClear.shader" t="Include" />
+                    <e p="SunShaftsComposite.shader" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="Textures" t="Include" />
+          </e>
+        </e>
         <e p="Data" t="Include" />
+        <e p="Models" t="Include">
+          <e p="camera man" t="Include">
+            <e p="Materials" t="Include" />
+            <e p="source" t="Include" />
+            <e p="Textures" t="Include" />
+          </e>
+          <e p="RandomToiletMales" t="Include">
+            <e p="Textures" t="Include" />
+          </e>
+          <e p="speakerMan" t="Include">
+            <e p="speakermansmall_skibiditoilet_anims" t="Include" />
+            <e p="Textures" t="Include" />
+          </e>
+          <e p="tvMan" t="Include">
+            <e p="skibiditoilet_tvman_for_gun_anims" t="Include" />
+            <e p="Textures" t="Include" />
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -309,7 +368,9 @@
         </e>
         <e p="Prefab" t="Include">
           <e p="UI" t="Include">
-            <e p="Menu" t="Include" />
+            <e p="Menu" t="Include">
+              <e p="Menus" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Resources" t="Include" />
@@ -325,6 +386,7 @@
                 <e p="BaseEnemyState.cs" t="Include" />
                 <e p="EnemyAttackState.cs" t="Include" />
                 <e p="EnemyChaseState.cs" t="Include" />
+                <e p="EnemyCombatState.cs" t="Include" />
                 <e p="EnemyDeadState.cs" t="Include" />
                 <e p="EnemyView.cs" t="Include" />
                 <e p="StateSerializeData" t="Include">
@@ -349,6 +411,7 @@
                   <e p="PlayerCombatSerializeData.cs" t="Include" />
                   <e p="PlayerMoveSerializeData.cs" t="Include" />
                 </e>
+                <e p="TargetController.cs" t="Include" />
               </e>
               <e p="PlayerView.cs" t="Include" />
             </e>
@@ -367,6 +430,7 @@
           </e>
           <e p="FSM" t="Include">
             <e p="FSM" t="Include">
+              <e p="ActionPredicate.cs" t="Include" />
               <e p="FuncPredicate.cs" t="Include" />
               <e p="IPredicate.cs" t="Include" />
               <e p="IState.cs" t="Include" />
@@ -385,9 +449,22 @@
           </e>
           <e p="Systems" t="Include">
             <e p="CoreInitializer.cs" t="Include" />
+            <e p="GameOverController.cs" t="Include" />
+            <e p="GameState.cs" t="Include" />
             <e p="HealthSystem.cs" t="Include" />
+            <e p="Signals" t="Include">
+              <e p="GameOverSignal.cs" t="Include" />
+            </e>
           </e>
           <e p="UI" t="Include">
+            <e p="Menu" t="Include">
+              <e p="BaseMenu.cs" t="Include" />
+              <e p="CoreMenu.cs" t="Include" />
+              <e p="LoseMenu.cs" t="Include" />
+              <e p="MainMenu.cs" t="Include" />
+              <e p="WinMenu.cs" t="Include" />
+            </e>
+            <e p="MenuSwitcher.cs" t="Include" />
             <e p="UIAttackAction.cs" t="Include" />
             <e p="UIBlockAction.cs" t="Include" />
           </e>

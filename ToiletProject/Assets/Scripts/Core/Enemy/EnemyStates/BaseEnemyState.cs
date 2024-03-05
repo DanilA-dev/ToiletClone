@@ -8,9 +8,10 @@ namespace Core.Enemy.EnemyStates
         protected PlayerController _player;
         protected EnemyView _view;
         
-        public BaseEnemyState(PlayerController playerController)
+        public BaseEnemyState(PlayerController playerController, EnemyView view)
         {
             _player = playerController;
+            _view = view;
         }
         
         public abstract void OnEnter();

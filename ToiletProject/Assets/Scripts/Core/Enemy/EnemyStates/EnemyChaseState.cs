@@ -7,7 +7,8 @@ namespace Core.Enemy.EnemyStates
     {
         private EnemyChaseSerializeData _serializeData;
         
-        public EnemyChaseState(PlayerController playerController, EnemyChaseSerializeData serializeData) : base(playerController)
+        public EnemyChaseState(PlayerController playerController, EnemyChaseSerializeData serializeData,
+            EnemyView view) : base(playerController, view)
         {
             _serializeData = serializeData;
         }
@@ -15,11 +16,15 @@ namespace Core.Enemy.EnemyStates
         public override void OnEnter()
         {
            Debug.Log("Enter chase state");
+           _view.Move();
            _serializeData.Agent.speed = _serializeData.Speed;
-           _serializeData.Agent.isStopped = false;
            _serializeData.Agent.enabled = true;
            _serializeData.Agent.updateRotation = true;
-           _serializeData.Agent.destination = _player.transform.position;
+        }
+
+        public override void OnUpdate()
+        {
+            _serializeData.Agent.destination = _player.transform.position;
         }
 
         public override void OnExit()

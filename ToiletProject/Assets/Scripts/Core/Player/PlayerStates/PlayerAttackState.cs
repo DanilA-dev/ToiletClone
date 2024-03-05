@@ -2,6 +2,7 @@
 using Systems;
 using Core.Enemy;
 using Core.Level;
+using UniRx;
 using UnityEngine;
 
 namespace Core.Player.PlayerStates
@@ -20,6 +21,7 @@ namespace Core.Player.PlayerStates
         public override void OnEnter()
         {
             Debug.Log("Enter attack state");
+            AttackEnemy();
         }
 
         public void SetEnemy(EnemyController enemy)
@@ -30,7 +32,7 @@ namespace Core.Player.PlayerStates
         private void AttackEnemy()
         {
             _view.Attack();
-            _enemyHealthSystem.Damage(1);
+            _enemyHealthSystem?.Damage(1);
         }
         
         public override void OnExit()

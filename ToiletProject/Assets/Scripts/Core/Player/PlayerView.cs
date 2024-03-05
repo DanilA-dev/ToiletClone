@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Core.Player
 {
@@ -6,35 +7,55 @@ namespace Core.Player
     {
         [SerializeField] private Animator _animator;
 
-        private int _moveHash = Animator.StringToHash("Move");
-        private int _idleHash = Animator.StringToHash("Idle");
-        private int _attackHash = Animator.StringToHash("Attack");
-        private int _blockHash = Animator.StringToHash("Block");
+        private readonly string _runAnim = "Run";
+        private readonly string _idleAnim = "Idle";
+        private readonly string _combatIdleAnim = "CombatIdle";
+
+        private readonly string _attack1Anim = "Attack_1";
+        private readonly string _attack2Anim = "Attack_2";
+        private readonly string _damagedAnim = "Hit";
+        private readonly string _blockAnim = "Block";
         private int _dieHash = Animator.StringToHash("Die");
 
-        public void Move()
+        public void Run()
         {
-            
+            _animator.CrossFade(_runAnim, 0.1f);
         }
 
         public void Idle()
         {
-            
+            _animator.CrossFade(_idleAnim, 0.1f);
         }
 
         public void Attack()
         {
-            
+            List<string> anims =new List<string>
+            {
+                _attack1Anim,
+                _attack2Anim
+            };
+            var attackAnim = anims[Random.Range(0, anims.Count)];
+            _animator.CrossFade(attackAnim, 0);
+        }
+
+        public void Combat()
+        {
+            _animator.CrossFade(_combatIdleAnim, 0.1f);
         }
         
         public void Block()
         {
-            
+            _animator.CrossFade(_blockAnim, 0);
         }
         
         public void Die()
         {
             
+        }
+
+        public void Damaged()
+        {
+            _animator.CrossFade(_damagedAnim, 0.1f);
         }
     }
 }

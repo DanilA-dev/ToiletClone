@@ -11,18 +11,12 @@ namespace Entity
         
         public abstract IState StartState { get; }
 
-        private void Awake()
-        {
-            InitStateMachine();
-            InitStatesAndTransitions();
-        }
-
-        private void Update()
+        protected virtual void Update()
         {
             _stateMachine?.OnUpdate();
         }
 
-        private void InitStateMachine()
+        protected void InitStateMachine()
         {
             _stateMachine = new StateMachine();
         }

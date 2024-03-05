@@ -452,8 +452,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7950141352701007121}
+  - component: {fileID: 1936895544786363867}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,6 +481,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1936895544786363867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543569571119658647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c497033c49d9437993aab794e7e99694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playButton: {fileID: 2810542902915669088}
+  _upgradeAttackButton: {fileID: 2415875042554752554}
+  _upgradeHealthBuitton: {fileID: 233781466193193539}
+  _settingsButton: {fileID: 0}
+  _skinsButton: {fileID: 4783270761813286447}
+  _shopButton: {fileID: 3218587219561719164}
 --- !u!1001 &2024534700605746044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -603,6 +622,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a48ba443ef15574c904eb5c07ff4e66, type: 3}
+--- !u!114 &4783270761813286447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6807473408296236371, guid: 0a48ba443ef15574c904eb5c07ff4e66,
+    type: 3}
+  m_PrefabInstance: {fileID: 2024534700605746044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6903095686328255212 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4887583613608929680, guid: 0a48ba443ef15574c904eb5c07ff4e66,
@@ -871,6 +902,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6a0b611fe6fbe44081c20a805b9c6e9, type: 3}
+--- !u!114 &233781466193193539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5864018348644884077, guid: c6a0b611fe6fbe44081c20a805b9c6e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5935641640849519662}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4090623406301366982 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7681859823308635880, guid: c6a0b611fe6fbe44081c20a805b9c6e9,
@@ -1001,6 +1044,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8135686840543670343}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2415875042554752554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5864018348644884077, guid: c6a0b611fe6fbe44081c20a805b9c6e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 8135686840543670343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8274160327310741551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,6 +1179,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a48ba443ef15574c904eb5c07ff4e66, type: 3}
+--- !u!114 &3218587219561719164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6807473408296236371, guid: 0a48ba443ef15574c904eb5c07ff4e66,
+    type: 3}
+  m_PrefabInstance: {fileID: 8274160327310741551}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3532959129382599103 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4887583613608929680, guid: 0a48ba443ef15574c904eb5c07ff4e66,
