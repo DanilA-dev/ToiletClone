@@ -88,6 +88,9 @@ namespace Core.Enemy
         
         private void Attack()
         {
+            if(_isAttacking)
+                return;
+                        
             _isAttacking = true;
             _attackTimer.Start();
             _view.Attack();

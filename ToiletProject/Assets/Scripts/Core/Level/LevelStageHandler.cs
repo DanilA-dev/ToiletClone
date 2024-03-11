@@ -35,9 +35,14 @@ namespace Core.Level
         
         private void OnStageClear(LevelStage stage)
         {
+            _gameState.IsStageClear.Value = true;
             _gameState.CurrentStage.Value++;
+            GetNextStage()?.Activate();
             if (stage.IsFinal)
-                MessageBroker.Default.Publish(new GameOverSignal(GameOverType.Win));
+            {
+                _gameState.IsGameOver.Value = true;
+                _gameState.EndGameState.Value = GameOverType.Win;
+            }
         }
       
     }

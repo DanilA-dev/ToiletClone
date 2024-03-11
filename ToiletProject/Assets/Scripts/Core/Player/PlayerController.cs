@@ -8,7 +8,6 @@ using CustomFSM.Preicate;
 using CustomFSM.State;
 using Data;
 using Entity;
-using FSM.FSM;
 using UniRx;
 using UnityEngine;
 
@@ -31,11 +30,11 @@ namespace Core.Player
         private PlayerData _playerData;
         private GameState _gameState;
         private TargetController _targetController;
+        private PlayerActionReceiver _actionReceiver;
         
         private bool _isAttacking;
         private bool _isBlocking;
 
-        private Action OnStageChangeAction;
         
         public HealthSystem HealthSystem => _healthSystem;
         public override IState StartState => _moveState;
@@ -45,64 +44,53 @@ namespace Core.Player
             _healthSystem = GetComponent<HealthSystem>();
         }
 
-        public void Init(PlayerData playerData, LevelStageHandler levelStageHandler, GameState gameState, TargetController targetController)
+        public void Init(PlayerData playerData, LevelStageHandler levelStageHandler,
+            GameState gameState, TargetController targetController, PlayerActionReceiver actionReceiver)
         {
             _gameState = gameState;
+            _actionReceiver = actionReceiver;
             _levelStageHandler = levelStageHandler;
             _targetController = targetController;
             _playerData = playerData;
             _healthSystem.SetMaxHealth(playerData.MaxHealth);
             InitStateMachine();
             InitStatesAndTransitions();
-
-            MessageBroker.Default.Receive<PlayerCoreAction>()
-                .Where(a => a.PlayerCoreActionType == PlayerCoreActionType.Attack)
-                .Subscribe(s => AttackSignalInvoke()).AddTo(gameObject);
-            
-            MessageBroker.Default.Receive<PlayerCoreAction>()
-                .Where(a => a.PlayerCoreActionType == PlayerCoreActionType.Block)
-                .Subscribe(s => BlockSignalInvoke()).AddTo(gameObject);
-            
-            MessageBroker.Default.Receive<PlayerCoreAction>()
-                .Where(a => a.PlayerCoreActionType == PlayerCoreActionType.None)
-                .Subscribe(s => NoActionSignalInvoke()).AddTo(gameObject);
             
             _healthSystem.OnHealhChange += (cur, max) => _view.Damaged();
-            _gameState.CurrentStage.Subscribe(_ => OnStageChangeAction?.Invoke()).AddTo(gameObject);
             _targetController.OnTargetUpdate += SetTarget;
+            _healthSystem.OnDie += () =>
+            {
+                _gameState.IsGameOver.Value = true;
+                _gameState.EndGameState.Value = GameOverType.Lose;
+            };
         }
 
-        private void AttackSignalInvoke()
+        private void Start()
         {
-            _isAttacking = true;
-            _isBlocking = false;
+            SetTarget(_targetController.GetTarget());
         }
 
-        private void BlockSignalInvoke()
+        protected override void Update()
         {
-            _isBlocking = true;
-            _isAttacking = false;
-        }
-
-        private void NoActionSignalInvoke()
-        {
-            _isBlocking = false;
-            _isAttacking = false;
+            if(_gameState.IsGameOver.Value)
+                return;
+            
+            base.Update();
         }
 
         protected override void InitStatesAndTransitions()
         {
             _moveState = new PlayerMoveState(_view, _levelStageHandler, _moveStateData, this);
             _combatState = new PlayerCombatState(_view, _levelStageHandler, this, _combatStateData);
-            _attackState = new PlayerAttackState(_view, _levelStageHandler, this);
+            _attackState = new PlayerAttackState(_view, _levelStageHandler, this, _playerData);
             _blockState = new PlayerBlockState(_view, _levelStageHandler, this);
             
             AddTransition(_moveState, _combatState, new FuncPredicate(IsNearStagePoint));
-            AddTransition(_combatState, _attackState, new FuncPredicate(() => _isAttacking));
-            AddTransition(_combatState, _blockState, new FuncPredicate(() => _isBlocking));
-            AddTransition(_attackState, _combatState, new FuncPredicate(() => !_isAttacking));
-            AddTransition(_blockState, _combatState, new FuncPredicate(() => !_isBlocking));
-            AddTransition(_combatState, _moveState, new ActionPredicate(OnStageChangeAction));
+            AddTransition(_combatState, _attackState, new FuncPredicate(() =>_actionReceiver.IsAttacking));
+            AddTransition(_combatState, _blockState, new FuncPredicate(() => _actionReceiver.IsBlocking));
+            AddTransition(_attackState, _combatState, new FuncPredicate(() => !_actionReceiver.IsAttacking));
+            AddTransition(_blockState, _combatState, new FuncPredicate(() => !_actionReceiver.IsBlocking));
+            AddTransition(_combatState, _moveState,new FuncPredicate((() => _gameState.IsStageClear.Value)));
             _stateMachine.SetState(StartState);
         }
         

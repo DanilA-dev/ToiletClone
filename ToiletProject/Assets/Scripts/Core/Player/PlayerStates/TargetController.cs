@@ -34,6 +34,9 @@ namespace Core.Player.PlayerStates
                     enemy.Health.OnDie -= CheckEnemiesDeath;
             
             _activeEnemies = _levelStageHandler.GetNextStage().Enemies;
+            if(_activeEnemies == null)
+                return;
+            
             foreach (var enemy in _activeEnemies)
                 enemy.Health.OnDie += CheckEnemiesDeath;
         }
@@ -43,7 +46,7 @@ namespace Core.Player.PlayerStates
             OnTargetUpdate?.Invoke(GetTarget());
         }
 
-        private EnemyController GetTarget()
+        public EnemyController GetTarget()
         {
             var aliveEnemies = _activeEnemies.Where(e => !e.Health.IsDead).ToList();
             var randIndex = Random.Range(0, aliveEnemies.Count);

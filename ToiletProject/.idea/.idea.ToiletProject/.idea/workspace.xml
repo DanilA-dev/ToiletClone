@@ -20,53 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d545f1e-22dc-4840-9e7d-a9a06080bd1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyCombatState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyCombatState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/TargetController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/TargetController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/ActionPredicate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/ActionPredicate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Signals.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Signals/GameOverSignal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Signals/GameOverSignal.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/BaseMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/BaseMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/CoreMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/CoreMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/LoseMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/LoseMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MainMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MainMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/WinMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/WinMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MenuSwitcher.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MenuSwitcher.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerActionReceiver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerActionReceiver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIPlayerAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animatons/Player/Attack_1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animatons/Player/Attack_1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animatons/Player/Attack_2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animatons/Player/Attack_2.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animatons/Player/Attack_3.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animatons/Player/Attack_3.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animatons/Player/CombatIdle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animatons/Player/CombatIdle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animatons/Player/Hit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animatons/Player/Hit.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animatons/Player/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animatons/Player/Idle.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animatons/Player/Player_AC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animatons/Player/Player_AC.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animatons/Player/Run.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animatons/Player/Run.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menu.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menu.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Game State.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Game State.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Player Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Player Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/BaseEnemyPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/BaseEnemyPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/CoreMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/CoreMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/LoseMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/LoseMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/WinMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/WinMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/UIActionButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/UI/UIActionButton.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestLevel/NavMesh-NavMeshSurface.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestLevel/NavMesh-NavMeshSurface.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/BaseEnemyState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/BaseEnemyState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyChaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyCombatState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyCombatState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyDeadState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyDeadState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/StateSerializeData/EnemyAttackSerializeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/StateSerializeData/EnemyAttackSerializeData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStageHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStageHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerController.cs" afterDir="false" />
@@ -74,11 +50,25 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerBlockState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerBlockState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerCombatState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerCombatState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerMoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/TargetController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/TargetController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/FSM_baseActor/BaseFSMActor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/FSM_baseActor/BaseFSMActor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions-Helpers/TransformExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions-Helpers/TransformExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/ActionPredicate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/ActionPredicate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/StateMachine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/CoreInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/CoreInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/HealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/HealthSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIAttackAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIAttackAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/BaseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/BaseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/LoseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/LoseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/WinMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/WinMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MenuSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MenuSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIAttackAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIAttackAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIBlockAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIBlockAction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIPlayerAction.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,16 +80,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppStart.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/105DA115-9EC9-496A-B931-0694C7B11DD2/3f/26782320/Func`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/787ACC3C-9A4C-471B-A7D9-71300105AF24/1f/2b3b1890/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/WorldSpaceHealthBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/105DA115-9EC9-496A-B931-0694C7B11DD2/b8/8e8ff569/Action.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions-Helpers/TransformExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/BasePlayerState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/StateSerializeData/PlayerAttackSerializeData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/StateSerializeData/PlayerCombatSerializeData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/StateSerializeData/PlayerMoveSerializeData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/CoreMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerCoreSignals.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerAction.cs" />
@@ -107,8 +95,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Signals/UserCoreAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Signals/UserPlayerAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Signals/PlayerCoreAction.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIPlayerAction.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIBlockAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Data/PlayerData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/GaveOverController.cs" />
@@ -116,36 +102,43 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStageActivator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu/CoreMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AppStart.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu/BaseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu/WinMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu/LoseMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MainMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/GameState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/ActionPredicate.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuSwitcher.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerMoveState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerCombatState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerTargetController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/BaseEnemyState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSM_baseActor/BaseFSMActor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIAttackAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIBlockAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIPlayerAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyChaseState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyCombatState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyDeadState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerActionReceiver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions-Helpers/TransformExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/WorldSpaceHealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerBlockState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStageHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerTargetController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/TargetController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CoreInitializer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerMoveState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStage.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/BaseEnemyState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyChaseState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyDeadState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSM_baseActor/BaseFSMActor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/TargetController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyCombatState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/HealthSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/LevelGameState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/StateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/ActionPredicate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerCombatState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIAttackAction.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/HealthSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStageHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/GameState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuSwitcher.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CoreInitializer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverController.cs" />
       </list>
     </option>
   </component>
@@ -166,10 +159,10 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="186868">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="186868" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -268,10 +261,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="371" key="GridCell.Tab.3.right/0.0.1920.1032@0.0.1920.1032" timestamp="1709621399049" />
-    <state x="791" y="217" key="RiderGenerateDialog" timestamp="1709591903295">
+    <state x="791" y="217" key="RiderGenerateDialog" timestamp="1709670641776">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="791" y="217" key="RiderGenerateDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1709591903295" />
+    <state x="791" y="217" key="RiderGenerateDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1709670641776" />
     <state x="461" y="161" key="SettingsEditor" timestamp="1709562898102">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -280,28 +273,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="92" y="92" width="1736" height="848" key="VCS.FileHistoryDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1709587676492" />
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1709566943384">
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1710108519535">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1709566943384" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/TargetController.cs</url>
-          <line>37</line>
-          <properties documentPath="C:\Program Files\Unity\UnityProjects\ToiletShit\ToiletClone\ToiletProject\Assets\Scripts\Core\Player\PlayerStates\TargetController.cs" initialLine="37">
-            <startOffsets>
-              <option value="1224" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1264" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1710108519535" />
   </component>
 </project>

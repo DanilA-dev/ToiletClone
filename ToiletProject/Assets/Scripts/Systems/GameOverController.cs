@@ -1,32 +1,25 @@
-﻿using UniRx;
+﻿using UI.Core;
+using UI.Core.Menu;
+using UniRx;
 using UnityEngine;
 
 namespace Systems
 {
-    public enum GameOverType
-    {
-        Lose,
-        Win
-    }
 
     public class GameOverController : MonoBehaviour
     {
-        public void Init()
+        private GameState _gameState;
+        public void Init(GameState gameState)
         {
-            MessageBroker.Default.Receive<GameOverSignal>()
-                .Subscribe(_ => OnGameEnd(_.Type));
+            _gameState = gameState;
+            gameState.EndGameState.Subscribe(OnGameEnd).AddTo(gameObject);
         }
 
         private void OnGameEnd(GameOverType type)
         {
-            if (type == GameOverType.Win)
-            {
-                //Display Win
-            }
-            else
-            {
-                //Display lose
-            }
+            Debug.Log("End");
+            var menu = type == GameOverType.Win ? MenuType.WinMenu : MenuType.LoseMenu;
+            _gameState.CurrentTab.Value = menu;
         }
     }
 }

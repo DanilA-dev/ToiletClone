@@ -16,7 +16,6 @@ namespace Core.Player.PlayerStates
         
         public override void OnEnter()
         {
-            Debug.Log("Enter move state");
             _view.Run();
             _data.Agent.speed = _data.Speed;
             _data.Agent.enabled = true;
@@ -27,7 +26,6 @@ namespace Core.Player.PlayerStates
 
         public override void OnExit()
         {
-            Debug.Log("Exit move state");
             _data.Agent.isStopped = true;
             _data.Agent.updateRotation = false;
             _data.Agent.enabled = false;

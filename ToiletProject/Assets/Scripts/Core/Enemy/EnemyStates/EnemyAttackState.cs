@@ -15,8 +15,6 @@ namespace Core.Enemy.EnemyStates
 
         public override void OnEnter()
         {
-            Debug.Log("Enter Attack state");
-            _view.Attack();
         }
        
         public override void OnUpdate()
@@ -27,12 +25,11 @@ namespace Core.Enemy.EnemyStates
         private void RotateTowardsPlayer()
         {
             var rotSpeed = _data.RotateSpeed * Time.deltaTime;
-            _data.EnemyTransform.RotateTowardsByAxis(_player.transform, Vector3.up, rotSpeed);
+            _data.EnemyTransform.LookAt(_player.transform);
         }
 
         public override void OnExit()
         {
-            Debug.Log("Exit Attack state");
         }
     }
 }

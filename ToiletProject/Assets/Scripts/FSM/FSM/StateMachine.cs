@@ -72,8 +72,6 @@ namespace CustomFSM.StateMachine
             return null;
         }
 
-        
-
         private StateNode GetOrAddNode(IState state)
         {
             var statenode = _stateDic.GetValueOrDefault(state.GetType());

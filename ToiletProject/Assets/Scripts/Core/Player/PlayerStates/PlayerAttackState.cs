@@ -2,6 +2,7 @@
 using Systems;
 using Core.Enemy;
 using Core.Level;
+using Data;
 using UniRx;
 using UnityEngine;
 
@@ -10,34 +11,32 @@ namespace Core.Player.PlayerStates
     public class PlayerAttackState : BasePlayerState
     {
         private EnemyController _currentEnemy;
-        private HealthSystem _enemyHealthSystem;
+        private PlayerData _data;
         
         public PlayerAttackState(PlayerView view, LevelStageHandler stageHandler,
-            PlayerController playerController)
+            PlayerController playerController, PlayerData data)
              : base(view, stageHandler, playerController)
         {
+            _data = data;
         }
 
         public override void OnEnter()
         {
-            Debug.Log("Enter attack state");
             AttackEnemy();
         }
 
         public void SetEnemy(EnemyController enemy)
         {
             _currentEnemy = enemy;
-            _enemyHealthSystem = _currentEnemy.GetComponent<HealthSystem>();
         }
         private void AttackEnemy()
         {
             _view.Attack();
-            _enemyHealthSystem?.Damage(1);
+            _currentEnemy.Health.Damage(_data.Damage);
         }
         
         public override void OnExit()
         {
-            Debug.Log("Exit attack state");
         }
     }
 }

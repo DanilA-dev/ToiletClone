@@ -15,7 +15,6 @@ namespace Core.Enemy.EnemyStates
 
         public override void OnEnter()
         {
-           Debug.Log("Enter chase state");
            _view.Move();
            _serializeData.Agent.speed = _serializeData.Speed;
            _serializeData.Agent.enabled = true;
@@ -29,7 +28,6 @@ namespace Core.Enemy.EnemyStates
 
         public override void OnExit()
         {
-            Debug.Log("Exit chase state");
             _serializeData.Agent.isStopped = true;
             _serializeData.Agent.updateRotation = false;
             _serializeData.Agent.enabled = false;

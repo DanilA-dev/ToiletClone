@@ -19,6 +19,18 @@ namespace Core.Level
         private List<HealthSystem> _enemiesHealth = new List<HealthSystem>();
         public event Action<LevelStage> OnStageClear;
 
+        #region Properties
+
+        public bool IsClear { get; private set; }
+
+        public Transform GetPoint => _getPoint;
+
+        public List<EnemyController> Enemies => _enemies;
+        public int Index => _index;
+        public bool IsFinal => _isFinal;
+
+        #endregion
+        
         public void Init(PlayerController playerController)
         {
             _enemies.ForEach(e => e.Init(playerController));
@@ -61,17 +73,7 @@ namespace Core.Level
             OnStageClear?.Invoke(this);
         }
         
-        #region Properties
-
-        public bool IsClear { get; private set; }
-
-        public Transform GetPoint => _getPoint;
-
-        public List<EnemyController> Enemies => _enemies;
-        public int Index => _index;
-        public bool IsFinal => _isFinal;
-
-        #endregion
+       
        
     }
 }

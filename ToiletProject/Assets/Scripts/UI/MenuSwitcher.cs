@@ -1,55 +1,49 @@
 ﻿using UI.Core.Menu;
 using UnityEngine;
 using System.Linq;
+using UniRx;
 using Systems;
 
 namespace UI.Core
 {
     public class MenuSwitcher : MonoBehaviour
     {
-        private static MenuSwitcher _instance;
         
-        private BaseMenu[] _menus;
+        [SerializeField] private BaseMenu[] _menus;
         
         public void Init(GameState gameState)
         {
-            _instance = this;
             FindAllMenusOnScene(gameState);
+            gameState.CurrentTab.Subscribe(SwitchMenu).AddTo(gameObject);
         }
 
-        public static void SwitchMenu(MenuType menuType)
+        private void SwitchMenu(MenuType menuType)
         {
-            if(_instance._menus == null)
-                return;
-
-            foreach (var menu in _instance._menus)
+            foreach (var menu in _menus)
             {
                 var state = menu.MenuType == menuType;
                 menu.gameObject.SetActive(state);
             }
         }
 
-        public static void OpenMenu(MenuType menuType)
+        private void OpenMenu(MenuType menuType)
         {
-            if(_instance._menus == null)
+            if (_menus.Length <= 0)
                 return;
 
-            var menuToOpen = _instance._menus.FirstOrDefault(m => m.MenuType == menuType);
+            var menuToOpen = _menus.FirstOrDefault(m => m.MenuType == menuType);
             menuToOpen?.gameObject.SetActive(true);
         }
         
         private void FindAllMenusOnScene(GameState gameState)
         {
-            _menus = FindObjectsOfType<BaseMenu>();
-
-            if (_instance._menus == null)
+            if (_menus.Length <= 0)
                 return;
             
-            foreach (var menu in _instance._menus)
+            foreach (var menu in _menus)
                 menu.Init(gameState);
         }
 
-        public MenuSwitcher Instance() => _instance;
 
     }
 }

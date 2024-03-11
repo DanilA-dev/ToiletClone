@@ -11,13 +11,11 @@ namespace Core.Enemy.EnemyStates
 
         public override void OnEnter()
         {
-            Debug.Log("Enter Dead state");
             _view.Die();
         }
 
         public override void OnExit()
         {
-            Debug.Log("Exit Dead state");
         }
     }
 }

@@ -14,14 +14,12 @@ namespace Core.Enemy.EnemyStates
 
         public override void OnEnter()
         {
-            Debug.Log("Enter combatState");
             _enemy.EnterCombat();
             _view.Idle();
         }
 
         public override void OnExit()
         {
-            Debug.Log("Exit combatState");
         }
     }
 }

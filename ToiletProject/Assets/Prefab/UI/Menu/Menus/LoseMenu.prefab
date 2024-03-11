@@ -706,7 +706,6 @@ GameObject:
   - component: {fileID: 8301116781165182999}
   - component: {fileID: 5566515562491085018}
   - component: {fileID: 4197761234361330941}
-  - component: {fileID: 6263654551014331255}
   m_Layer: 5
   m_Name: LosePanel
   m_TagString: Untagged
@@ -774,16 +773,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6263654551014331255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103154160790711686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9117c0d59444b3adf1d6360ed857d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _toMainMenuButton: {fileID: 6574459660090880158}

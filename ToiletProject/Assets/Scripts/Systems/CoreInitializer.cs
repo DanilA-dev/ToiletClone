@@ -12,30 +12,33 @@ namespace Systems
     public class CoreInitializer : MonoBehaviour
     {
         [Header("Datas")] 
-        [SerializeField] private GameState _gameState;
         [SerializeField] private PlayerData _playerData;
         [Header("Controllers")]
         [SerializeField] private PlayerController _playerController;
         [SerializeField] private TargetController _targetController;
-        [SerializeField] private LevelStageHandler _levelStageHandler;
         [SerializeField] private GameOverController _gameOverController;
+        [SerializeField] private LevelStageHandler _levelStageHandler;
+        [SerializeField] private PlayerActionReceiver _actionReceiver;
         [Header("UI")] 
         [SerializeField] private MenuSwitcher _menuSwitcher;
         
+         private GameState _gameState;
 
         private void Awake()
         {
+            _gameState = new GameState();
+            
             _menuSwitcher.Init(_gameState);
             _levelStageHandler.Init(_playerController, _gameState);
-            _gameOverController.Init();
-            
+            _gameOverController.Init(_gameState);
             _targetController.Init(_gameState, _levelStageHandler);
-            _playerController.Init(_playerData, _levelStageHandler, _gameState, _targetController);
+            _playerController.Init(_playerData, _levelStageHandler, _gameState, _targetController, _actionReceiver);
+            
         }
 
         private void Start()
         {
-            MenuSwitcher.SwitchMenu(MenuType.CoreMenu);
+            _gameState.CurrentTab.Value = MenuType.CoreMenu;
         }
     }
 }

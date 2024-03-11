@@ -17,7 +17,6 @@ namespace Core.Player.PlayerStates
 
         public override void OnEnter()
         {
-            Debug.Log("Enter combatState");
             _view.Combat();
         }
 
@@ -37,12 +36,11 @@ namespace Core.Player.PlayerStates
                 return;
 
             var speed = _combatSerializeData.RotateSpeed * Time.deltaTime;
-            _playerController.transform.RotateTowardsByAxis(_currentEnemy.transform, Vector3.up, speed);
+            _playerController.transform.LookAt(_currentEnemy.transform);
         }
 
         public override void OnExit()
         {
-            Debug.Log("Exit combatState");
         }
     }
 }

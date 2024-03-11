@@ -13,7 +13,7 @@ namespace Systems
         
         public int CurrentHealth { get; private set; }
         public bool IsDead { get; private set; }
-        public bool IsDamagable { get; private set; }
+        public bool IsDamagable { get; private set; } = true;
 
         private void Awake()
         {
@@ -22,6 +22,9 @@ namespace Systems
 
         public void Damage(int damageValue)
         {
+            if(IsDead)
+                return;
+            
             if(!IsDamagable)
                 return;
             

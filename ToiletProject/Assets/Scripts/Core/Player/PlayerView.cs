@@ -13,6 +13,7 @@ namespace Core.Player
 
         private readonly string _attack1Anim = "Attack_1";
         private readonly string _attack2Anim = "Attack_2";
+        private readonly string _attack3Anim = "Attack_3";
         private readonly string _damagedAnim = "Hit";
         private readonly string _blockAnim = "Block";
         private int _dieHash = Animator.StringToHash("Die");
@@ -32,7 +33,8 @@ namespace Core.Player
             List<string> anims =new List<string>
             {
                 _attack1Anim,
-                _attack2Anim
+                _attack2Anim,
+                _attack3Anim
             };
             var attackAnim = anims[Random.Range(0, anims.Count)];
             _animator.CrossFade(attackAnim, 0);
