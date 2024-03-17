@@ -11,11 +11,9 @@ namespace Core.Level
     {
         [SerializeField] private List<LevelStage> _levelStages = new List<LevelStage>();
 
-        private GameState _gameState;
         
-        public void Init(PlayerController playerController, GameState gameState)
+        public void Init(PlayerController playerController)
         {
-            _gameState = gameState;
             
             foreach (var levelStage in _levelStages)
             {
@@ -26,7 +24,7 @@ namespace Core.Level
             var firstStage = GetNextStage();
             firstStage.Activate();
         }
-        public LevelStage GetCurrentStage() => _levelStages.Find(s => s.Index == _gameState.CurrentStage.Value);
+        public LevelStage GetCurrentStage() => _levelStages.Find(s => s.Index == GameState.CurrentStage.Value);
         
         public LevelStage GetNextStage()
         {
@@ -35,13 +33,13 @@ namespace Core.Level
         
         private void OnStageClear(LevelStage stage)
         {
-            _gameState.IsStageClear.Value = true;
-            _gameState.CurrentStage.Value++;
+            GameState.IsStageClear.Value = true;
+            GameState.CurrentStage.Value++;
             GetNextStage()?.Activate();
             if (stage.IsFinal)
             {
-                _gameState.IsGameOver.Value = true;
-                _gameState.EndGameState.Value = GameOverType.Win;
+                GameState.IsGameOver.Value = true;
+                GameState.EndGameState.Value = GameOverType.Win;
             }
         }
       

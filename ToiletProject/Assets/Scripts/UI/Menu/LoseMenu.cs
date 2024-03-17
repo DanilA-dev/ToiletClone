@@ -17,12 +17,12 @@ namespace UI.Core.Menu
 
         private void ReturnToMainMenu()
         {
-            _gameState.LoadScene(SceneType.Main);
+            GameState.CurrentScene.Value = SceneType.MainMenu;
         }
 
         private void RestartLevel()
         {
-            _gameState.RestartScene();
+            GameState.RestartGame();
         }
 
         public override MenuType MenuType => MenuType.LoseMenu;

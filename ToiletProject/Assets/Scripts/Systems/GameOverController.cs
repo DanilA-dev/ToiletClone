@@ -8,18 +8,14 @@ namespace Systems
 
     public class GameOverController : MonoBehaviour
     {
-        private GameState _gameState;
-        public void Init(GameState gameState)
+        public void Init()
         {
-            _gameState = gameState;
-            gameState.EndGameState.Subscribe(OnGameEnd).AddTo(gameObject);
+            GameState.EndGameState.Subscribe(OnGameEnd).AddTo(gameObject);
         }
 
         private void OnGameEnd(GameOverType type)
         {
-            Debug.Log("End");
-            var menu = type == GameOverType.Win ? MenuType.WinMenu : MenuType.LoseMenu;
-            _gameState.CurrentTab.Value = menu;
+            GameState.CurrentTab.Value = MenuType.WinMenu;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace UI.Core.Menu
 
         private void ReturnToMainMenu()
         {
-            _gameState.LoadScene(SceneType.Main);
+            GameState.CurrentScene.Value = SceneType.MainMenu;
         }
 
         public override MenuType MenuType => MenuType.WinMenu;

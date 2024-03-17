@@ -17,11 +17,7 @@ namespace UI.Core.Menu
     
     public abstract class BaseMenu : MonoBehaviour
     {
-        protected GameState _gameState;
-        
         public abstract MenuType MenuType { get; }
-
-        public void Init(GameState gameState) => _gameState = gameState;
 
     }
 }

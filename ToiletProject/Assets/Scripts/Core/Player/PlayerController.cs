@@ -1,5 +1,4 @@
-﻿using System;
-using Systems;
+﻿using Systems;
 using Core.Enemy;
 using Core.Level;
 using Core.Player.PlayerStates;
@@ -8,7 +7,6 @@ using CustomFSM.Preicate;
 using CustomFSM.State;
 using Data;
 using Entity;
-using UniRx;
 using UnityEngine;
 
 namespace Core.Player
@@ -28,7 +26,6 @@ namespace Core.Player
         private LevelStageHandler _levelStageHandler;
         private HealthSystem _healthSystem;
         private PlayerData _playerData;
-        private GameState _gameState;
         private TargetController _targetController;
         private PlayerActionReceiver _actionReceiver;
         
@@ -45,9 +42,8 @@ namespace Core.Player
         }
 
         public void Init(PlayerData playerData, LevelStageHandler levelStageHandler,
-            GameState gameState, TargetController targetController, PlayerActionReceiver actionReceiver)
+            TargetController targetController, PlayerActionReceiver actionReceiver)
         {
-            _gameState = gameState;
             _actionReceiver = actionReceiver;
             _levelStageHandler = levelStageHandler;
             _targetController = targetController;
@@ -60,8 +56,8 @@ namespace Core.Player
             _targetController.OnTargetUpdate += SetTarget;
             _healthSystem.OnDie += () =>
             {
-                _gameState.IsGameOver.Value = true;
-                _gameState.EndGameState.Value = GameOverType.Lose;
+                GameState.IsGameOver.Value = true;
+                GameState.EndGameState.Value = GameOverType.Lose;
             };
         }
 
@@ -72,7 +68,7 @@ namespace Core.Player
 
         protected override void Update()
         {
-            if(_gameState.IsGameOver.Value)
+            if(GameState.IsGameOver.Value)
                 return;
             
             base.Update();
@@ -90,7 +86,7 @@ namespace Core.Player
             AddTransition(_combatState, _blockState, new FuncPredicate(() => _actionReceiver.IsBlocking));
             AddTransition(_attackState, _combatState, new FuncPredicate(() => !_actionReceiver.IsAttacking));
             AddTransition(_blockState, _combatState, new FuncPredicate(() => !_actionReceiver.IsBlocking));
-            AddTransition(_combatState, _moveState,new FuncPredicate((() => _gameState.IsStageClear.Value)));
+            AddTransition(_combatState, _moveState,new FuncPredicate((() => GameState.IsStageClear.Value)));
             _stateMachine.SetState(StartState);
         }
         

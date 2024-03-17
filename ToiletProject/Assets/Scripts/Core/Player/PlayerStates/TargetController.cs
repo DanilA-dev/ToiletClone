@@ -14,16 +14,13 @@ namespace Core.Player.PlayerStates
     {
         private LevelStageHandler _levelStageHandler;
         private List<EnemyController> _activeEnemies;
-        private GameState _gameState;
 
         public event Action<EnemyController> OnTargetUpdate;
         
-        public void Init(GameState gameState, LevelStageHandler levelStageHandler)
+        public void Init(LevelStageHandler levelStageHandler)
         {
-            _gameState = gameState;
             _levelStageHandler = levelStageHandler;
-            _gameState.CurrentStage.Subscribe(_ => UpdateActiveEnemies()).AddTo(gameObject);
-            
+            GameState.CurrentStage.Subscribe(_ => UpdateActiveEnemies()).AddTo(gameObject);
             _activeEnemies = _levelStageHandler.GetNextStage().Enemies;
         }
 

@@ -21,24 +21,20 @@ namespace Systems
         [SerializeField] private PlayerActionReceiver _actionReceiver;
         [Header("UI")] 
         [SerializeField] private MenuSwitcher _menuSwitcher;
-        
-         private GameState _gameState;
 
         private void Awake()
         {
-            _gameState = new GameState();
-            
-            _menuSwitcher.Init(_gameState);
-            _levelStageHandler.Init(_playerController, _gameState);
-            _gameOverController.Init(_gameState);
-            _targetController.Init(_gameState, _levelStageHandler);
-            _playerController.Init(_playerData, _levelStageHandler, _gameState, _targetController, _actionReceiver);
+            _menuSwitcher.Init();
+            _levelStageHandler.Init(_playerController);
+            _gameOverController.Init();
+            _targetController.Init(_levelStageHandler);
+            _playerController.Init(_playerData, _levelStageHandler,_targetController, _actionReceiver);
             
         }
 
         private void Start()
         {
-            _gameState.CurrentTab.Value = MenuType.CoreMenu;
+            GameState.CurrentTab.Value = MenuType.CoreMenu;
         }
     }
 }
