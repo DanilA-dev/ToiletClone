@@ -7,11 +7,14 @@ namespace Core.Player.PlayerStates
     public class PlayerMoveState : BasePlayerState
     {
         private PlayerMoveSerializeData _data;
+        private ILevelStageHandler _levelStageHandler;
 
-        public PlayerMoveState(PlayerView view, LevelStageHandler stageHandle,
-            PlayerMoveSerializeData moveSerializeData, PlayerController playerController) : base(view, stageHandle, playerController)
+        public PlayerMoveState(PlayerView view,
+            PlayerMoveSerializeData moveSerializeData, PlayerController playerController,
+            ILevelStageHandler levelStageHandler) : base(view, playerController)
         {
             _data = moveSerializeData;
+            _levelStageHandler = levelStageHandler;
         }
         
         public override void OnEnter()
@@ -21,7 +24,7 @@ namespace Core.Player.PlayerStates
             _data.Agent.enabled = true;
             _data.Agent.isStopped = false;
             _data.Agent.updateRotation = true;
-            _data.Agent.destination = _stageHandler.GetNextStage().GetPoint.position;
+            _data.Agent.destination = _levelStageHandler.GetNextStage().GetPoint.position;
         }
 
         public override void OnExit()

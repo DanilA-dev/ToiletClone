@@ -9,6 +9,8 @@ namespace UI.Core.Menu
         [SerializeField] private Button _restartButton;
         [SerializeField] private Button _returnToMenuButton;
 
+        public override MenuType MenuType => MenuType.LoseMenu;
+        
         private void Start()
         {
             _returnToMenuButton.onClick.AddListener(ReturnToMainMenu);
@@ -17,14 +19,13 @@ namespace UI.Core.Menu
 
         private void ReturnToMainMenu()
         {
-            GameState.CurrentScene.Value = SceneType.MainMenu;
+            _gameState.ChangeScene(SceneType.MainMenu);
         }
 
         private void RestartLevel()
         {
-            GameState.RestartGame();
+            _gameState.RestartGame();
         }
 
-        public override MenuType MenuType => MenuType.LoseMenu;
     }
 }

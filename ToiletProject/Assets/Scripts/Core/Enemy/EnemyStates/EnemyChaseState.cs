@@ -1,36 +1,38 @@
-﻿using Core.Player;
-using UnityEngine;
+﻿using Core.Interfaces;
+using UnityEngine.AI;
 
 namespace Core.Enemy.EnemyStates
 {
     public class EnemyChaseState : BaseEnemyState
     {
-        private EnemyChaseSerializeData _serializeData;
+        private readonly EnemyChaseSerializeData _serializeData;
+        private readonly NavMeshAgent _agent;
         
-        public EnemyChaseState(PlayerController playerController, EnemyChaseSerializeData serializeData,
-            EnemyView view) : base(playerController, view)
+        public EnemyChaseState(EnemyController enemyController,ITarget target, EnemyChaseSerializeData serializeData,
+            EnemyView view) : base(enemyController,target, view)
         {
             _serializeData = serializeData;
+            _agent = _serializeData.Agent;
         }
 
         public override void OnEnter()
         {
            _view.Move();
-           _serializeData.Agent.speed = _serializeData.Speed;
-           _serializeData.Agent.enabled = true;
-           _serializeData.Agent.updateRotation = true;
+           _agent.speed = _serializeData.Speed;
+           _agent.enabled = true;
+           _agent.updateRotation = true;
         }
 
         public override void OnUpdate()
         {
-            _serializeData.Agent.destination = _player.transform.position;
+            _agent.destination = Target.Transform.position;
         }
 
         public override void OnExit()
         {
-            _serializeData.Agent.isStopped = true;
-            _serializeData.Agent.updateRotation = false;
-            _serializeData.Agent.enabled = false;
+            _agent.isStopped = true;
+            _agent.updateRotation = false;
+            _agent.enabled = false;
         }
     }
 }

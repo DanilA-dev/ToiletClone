@@ -8,6 +8,7 @@ namespace UI.Core.Menu
     {
         [SerializeField] private Button _toMainMenuButton;
 
+        public override MenuType MenuType => MenuType.WinMenu;
         private void Start()
         {
             _toMainMenuButton.onClick.AddListener(ReturnToMainMenu);
@@ -15,9 +16,8 @@ namespace UI.Core.Menu
 
         private void ReturnToMainMenu()
         {
-            GameState.CurrentScene.Value = SceneType.MainMenu;
+            _gameState.ChangeScene(SceneType.MainMenu);
         }
 
-        public override MenuType MenuType => MenuType.WinMenu;
     }
 }

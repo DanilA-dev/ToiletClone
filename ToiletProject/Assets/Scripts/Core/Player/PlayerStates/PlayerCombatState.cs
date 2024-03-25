@@ -1,16 +1,16 @@
 ﻿using Core.Enemy;
-using Core.Level;
+using Core.Interfaces;
 using UnityEngine;
 
 namespace Core.Player.PlayerStates
 {
     public class PlayerCombatState : BasePlayerState
     {
-        private EnemyController _currentEnemy;
+        private ITarget _currentEnemy;
         private readonly PlayerCombatSerializeData _combatSerializeData;
         
-        public PlayerCombatState(PlayerView view, LevelStageHandler stageHandler,
-            PlayerController playerController, PlayerCombatSerializeData serializeData) : base(view, stageHandler, playerController)
+        public PlayerCombatState(PlayerView view,PlayerController playerController, PlayerCombatSerializeData serializeData)
+            : base(view, playerController)
         {
             _combatSerializeData = serializeData;
         }
@@ -20,7 +20,7 @@ namespace Core.Player.PlayerStates
             _view.Combat();
         }
 
-        public void SetEnemy(EnemyController enemy)
+        public void SetEnemy(ITarget enemy)
         {
             _currentEnemy = enemy;
         }
@@ -36,7 +36,7 @@ namespace Core.Player.PlayerStates
                 return;
 
             var speed = _combatSerializeData.RotateSpeed * Time.deltaTime;
-            _playerController.transform.LookAt(_currentEnemy.transform);
+            _playerController.transform.LookAt(_currentEnemy.Transform);
         }
 
         public override void OnExit()

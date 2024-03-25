@@ -1,23 +1,19 @@
-﻿using System;
-using Systems;
-using Core.Enemy;
-using Core.Level;
+﻿using Core.Enemy;
+using Core.Interfaces;
 using Data;
-using UniRx;
-using UnityEngine;
+using Data.PlayerStats;
 
 namespace Core.Player.PlayerStates
 {
     public class PlayerAttackState : BasePlayerState
     {
-        private EnemyController _currentEnemy;
-        private PlayerData _data;
+        private ITarget _currentEnemy;
+        private PlayerStatsData _statsData;
         
-        public PlayerAttackState(PlayerView view, LevelStageHandler stageHandler,
-            PlayerController playerController, PlayerData data)
-             : base(view, stageHandler, playerController)
+        public PlayerAttackState(PlayerView view, PlayerController playerController, PlayerStatsData statsData)
+             : base(view, playerController)
         {
-            _data = data;
+            _statsData = statsData;
         }
 
         public override void OnEnter()
@@ -25,14 +21,14 @@ namespace Core.Player.PlayerStates
             AttackEnemy();
         }
 
-        public void SetEnemy(EnemyController enemy)
+        public void SetEnemy(ITarget enemy)
         {
             _currentEnemy = enemy;
         }
         private void AttackEnemy()
         {
             _view.Attack();
-            _currentEnemy.Health.Damage(_data.Damage);
+            _currentEnemy.Health.Damage(_statsData.Damage);
         }
         
         public override void OnExit()

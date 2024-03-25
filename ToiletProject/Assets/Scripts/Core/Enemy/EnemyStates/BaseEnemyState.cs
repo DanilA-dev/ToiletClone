@@ -1,16 +1,18 @@
-﻿using Core.Player;
+﻿using Core.Interfaces;
 using CustomFSM.State;
 
 namespace Core.Enemy.EnemyStates
 {
     public abstract class BaseEnemyState : IState
     {
-        protected PlayerController _player;
-        protected EnemyView _view;
+        protected readonly EnemyController _enemyController;
+        protected readonly ITarget Target;
+        protected readonly EnemyView _view;
         
-        public BaseEnemyState(PlayerController playerController, EnemyView view)
+        public BaseEnemyState(EnemyController enemyController,ITarget target, EnemyView view)
         {
-            _player = playerController;
+            _enemyController = enemyController;
+            Target = target;
             _view = view;
         }
         

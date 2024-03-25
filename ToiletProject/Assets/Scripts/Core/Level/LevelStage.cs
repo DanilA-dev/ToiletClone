@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Systems;
+using Systems.EntityFactory;
 using Core.Enemy;
-using Core.Player;
 using UnityEngine;
 
 namespace Core.Level
@@ -14,35 +14,39 @@ namespace Core.Level
         [SerializeField] private int _index;
         [SerializeField] private bool _isFinal;
         [SerializeField] private Transform _getPoint;
-        [SerializeField] private List<EnemyController> _enemies = new List<EnemyController>();
+        [SerializeField] private List<Transform> _enemiesPositions = new List<Transform>();
 
+        private EntitySpawner _entitySpawner;
+        
         private List<HealthSystem> _enemiesHealth = new List<HealthSystem>();
+        private List<EnemyController> _createdEnemies = new List<EnemyController>();
         public event Action<LevelStage> OnStageClear;
 
         #region Properties
 
         public bool IsClear { get; private set; }
-
         public Transform GetPoint => _getPoint;
-
-        public List<EnemyController> Enemies => _enemies;
+        public List<EnemyController> CreatedEnemies => _createdEnemies;
         public int Index => _index;
         public bool IsFinal => _isFinal;
 
         #endregion
         
-        public void Init(PlayerController playerController)
+        public void Init(EntitySpawner entitySpawner)
         {
-            _enemies.ForEach(e => e.Init(playerController));
-            _enemies.ForEach(e => e.gameObject.SetActive(false));
+            _entitySpawner = entitySpawner;
+            
             FindEnemiesHealthSystems();
             SubscribeToEnemyDeath();
         }
 
         public void Activate()
         {
-            foreach (var enemy in _enemies)
-                enemy.gameObject.SetActive(true);
+            for (int i = 0; i < _enemiesPositions.Count; i++)
+            {
+                var newEnemy = _entitySpawner.SpawnEnemy(_enemiesPositions[i].position);
+                _createdEnemies.Add(newEnemy);
+            }
         }
         
         private void SubscribeToEnemyDeath()
@@ -59,12 +63,8 @@ namespace Core.Level
 
         private void FindEnemiesHealthSystems()
         {
-            foreach (var enemy in _enemies)
-            {
-                var healthSystem = enemy.GetComponent<HealthSystem>();
-                if (healthSystem != null)
-                    _enemiesHealth.Add(healthSystem);
-            }
+            foreach (var enemy in _createdEnemies)
+                _enemiesHealth.Add(enemy.Health);
         }
         
         private void Clear()

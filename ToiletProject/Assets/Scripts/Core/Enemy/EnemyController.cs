@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Systems;
 using Core.Enemy.EnemyStates;
-using Core.Player;
+using Core.Interfaces;
 using CustomFSM.Preicate;
 using CustomFSM.State;
 using Entity;
@@ -12,14 +11,14 @@ using Random = UnityEngine.Random;
 namespace Core.Enemy
 {
     [RequireComponent(typeof(HealthSystem))]
-    public class EnemyController : BaseFSMActor
+    public class EnemyController : BaseFSMActor, ITarget
     {
         [SerializeField] private float _attackDist;
         [SerializeField] private EnemyView _view;
         [SerializeField] private EnemyAttackSerializeData _attackData;
         [SerializeField] private EnemyChaseSerializeData _chaseData;
 
-        private PlayerController _player;
+        private ITarget _target;
         private HealthSystem _healthSystem;
         
         private CountdownTimer _attackDelayTimer;
@@ -31,7 +30,8 @@ namespace Core.Enemy
         private EnemyDeadState _deadState;
         private EnemyCombatState _combatState;
         private bool _isAttacking;
-        
+
+        public Transform Transform => transform;
         public HealthSystem Health => _healthSystem;
         public override IState StartState => _chaseState;
 
@@ -50,9 +50,9 @@ namespace Core.Enemy
             };
         }
 
-        public void Init(PlayerController playerController)
+        public void Init(ITarget target)
         {
-            _player = playerController;
+            _target = target;
             InitStateMachine();
             InitStatesAndTransitions();
         }
@@ -67,10 +67,10 @@ namespace Core.Enemy
 
         protected override void InitStatesAndTransitions()
         {
-            _chaseState = new EnemyChaseState(_player, _chaseData, _view);
-            _attackState = new EnemyAttackState(_player, _attackData, _view);
-            _deadState = new EnemyDeadState(_player, _view);
-            _combatState = new EnemyCombatState(_player, _view, this);
+            _chaseState = new EnemyChaseState(this,_target, _chaseData, _view);
+            _attackState = new EnemyAttackState(this,_target, _attackData, _view);
+            _deadState = new EnemyDeadState(this,_target, _view);
+            _combatState = new EnemyCombatState(this,_target, _view);
             
             AddTransition(_chaseState, _combatState, new FuncPredicate((IsNearPlayer)));
             AddTransition(_combatState, _attackState, new FuncPredicate(() => _isAttacking));
@@ -94,7 +94,7 @@ namespace Core.Enemy
             _isAttacking = true;
             _attackTimer.Start();
             _view.Attack();
-            _player.HealthSystem.Damage(_attackData.Damage);
+            _target.Health.Damage(_attackData.Damage);
             _attackTimer.OnTimerEnd += Cooldown;
         }
         
@@ -107,7 +107,7 @@ namespace Core.Enemy
         
         private bool IsNearPlayer()
         {
-            return Vector3.Distance(transform.position, _player.transform.position) <= _attackDist;
+            return Vector3.Distance(transform.position, _target.Transform.position) <= _attackDist;
         }
     }
 }

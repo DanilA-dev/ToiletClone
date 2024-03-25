@@ -1,4 +1,4 @@
-﻿using UniRx;
+﻿using System;
 using UnityEngine.SceneManagement;
 
 namespace Systems
@@ -10,12 +10,15 @@ namespace Systems
         Level_1 = 2
     }
     
-    public class SceneLoader
+    public class SceneLoader : IDisposable
     {
-        public SceneLoader(BootStrap bootStrap)
+        private readonly GameState _gameState;
+        
+        public SceneLoader(GameState gameState)
         {
-            GameState.CurrentScene.Subscribe(LoadScene).AddTo(bootStrap);
-            GameState.OnGameRestarted += RestartScene;
+            _gameState = gameState;
+            _gameState.OnSceneChanged +=LoadScene;
+            _gameState.OnGameRestarted += RestartScene;
         }
         
         private void LoadScene(SceneType scene)
@@ -23,15 +26,20 @@ namespace Systems
             if(SceneManager.GetActiveScene().name == scene.ToString())
                 return;
             
-            GameState.CurrentStage.Value = 0;
+            _gameState.CurrentStage.Value = 0;
             SceneManager.LoadScene(SceneType.Loader.ToString());
         }
 
         private void RestartScene()
         {
-            GameState.CurrentStage.Value = 0;
+            _gameState.CurrentStage.Value = 0;
             var activeScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(activeScene.name);
+        }
+
+        public void Dispose()
+        {
+            _gameState.OnSceneChanged -=LoadScene;
         }
     }
 }

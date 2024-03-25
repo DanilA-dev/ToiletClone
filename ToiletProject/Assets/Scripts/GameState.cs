@@ -1,30 +1,41 @@
 ﻿using System;
+using UI.Core;
 using UI.Core.Menu;
 using UniRx;
 
 namespace Systems
 {
-    public enum GameOverType
+    public class GameState
     {
-        Lose,
-        Win
-    }
-    
-    public static class GameState
-    {
-        public static IntReactiveProperty CurrentStage = new IntReactiveProperty();
-        public static ReactiveProperty<MenuType> CurrentTab = new ReactiveProperty<MenuType>();
-        public static ReactiveProperty<GameOverType> EndGameState = new ReactiveProperty<GameOverType>();
-        public static BoolReactiveProperty IsGameOver = new BoolReactiveProperty();
-        public static ReactiveProperty<SceneType> CurrentScene = new ReactiveProperty<SceneType>();
-        public static BoolReactiveProperty IsStageClear = new BoolReactiveProperty();
+        public IntReactiveProperty CurrentStage = new IntReactiveProperty();
 
-        public static event Action OnGameRestarted;
+        public bool IsGameOver { get; private set; }
+        public SceneType LoadedScene { get; private set; }
+        
+        public event Action OnGameRestarted;
+        public event Action<GameOverType> OnGameOver;
+        public event Action<MenuType, MenuOpenSettings> OnTabChanged;
+        public event Action<SceneType> OnSceneChanged; 
 
-        public static void RestartGame()
+        public void ChangeTab(MenuType type, MenuOpenSettings settings = MenuOpenSettings.FullSwitch) 
+            => OnTabChanged?.Invoke(type, settings);
+
+        public void ChangeScene(SceneType sceneType)
         {
-            OnGameRestarted?.Invoke();
+            IsGameOver = false;
+            LoadedScene = sceneType;
+            OnSceneChanged?.Invoke(sceneType);
+        }
+        public void SetGameOver(GameOverType gameOverType)
+        {
+            IsGameOver = true;
+            OnGameOver?.Invoke(gameOverType);
         }
 
+        public void RestartGame()
+        {
+            IsGameOver = false;
+            OnGameRestarted?.Invoke();
+        }
     }
 }

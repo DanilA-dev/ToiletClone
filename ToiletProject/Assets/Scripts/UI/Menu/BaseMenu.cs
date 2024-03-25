@@ -1,5 +1,6 @@
 ﻿using Systems;
 using UnityEngine;
+using Zenject;
 
 namespace UI.Core.Menu
 {
@@ -17,7 +18,14 @@ namespace UI.Core.Menu
     
     public abstract class BaseMenu : MonoBehaviour
     {
+        protected GameState _gameState;
         public abstract MenuType MenuType { get; }
 
+        [Inject]
+        private void Construct(GameState gameState)
+        {
+            _gameState = gameState;
+        }
+        
     }
 }

@@ -1,14 +1,14 @@
-﻿using Core.Player;
+﻿using Core.Interfaces;
 using UnityEngine;
 
 namespace Core.Enemy.EnemyStates
 {
     public class EnemyAttackState : BaseEnemyState
     {
-        private EnemyAttackSerializeData _data;
+        private readonly EnemyAttackSerializeData _data;
         
-        public EnemyAttackState(PlayerController playerController, EnemyAttackSerializeData data,
-            EnemyView view) : base(playerController, view)
+        public EnemyAttackState(EnemyController enemyController,ITarget target, EnemyAttackSerializeData data,
+            EnemyView view) : base(enemyController,target, view)
         {
             _data = data;
         }
@@ -19,13 +19,13 @@ namespace Core.Enemy.EnemyStates
        
         public override void OnUpdate()
         {
-            RotateTowardsPlayer();
+            RotateTowardsTarget();
         }
 
-        private void RotateTowardsPlayer()
+        private void RotateTowardsTarget()
         {
             var rotSpeed = _data.RotateSpeed * Time.deltaTime;
-            _data.EnemyTransform.LookAt(_player.transform);
+            _enemyController.transform.LookAt(Target.Transform);
         }
 
         public override void OnExit()

@@ -6,22 +6,35 @@ using Core.Enemy;
 using Core.Level;
 using UniRx;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 namespace Core.Player.PlayerStates
 {
     public class TargetController : MonoBehaviour
     {
-        private LevelStageHandler _levelStageHandler;
+        private ILevelStageHandler _levelStageHandler;
+        private GameState _gameState;
         private List<EnemyController> _activeEnemies;
 
         public event Action<EnemyController> OnTargetUpdate;
-        
-        public void Init(LevelStageHandler levelStageHandler)
+
+        [Inject]
+        private void Construct(GameState gameState,ILevelStageHandler levelStageHandler)
         {
+            _gameState = gameState;
             _levelStageHandler = levelStageHandler;
-            GameState.CurrentStage.Subscribe(_ => UpdateActiveEnemies()).AddTo(gameObject);
-            _activeEnemies = _levelStageHandler.GetNextStage().Enemies;
+        }
+
+        private void Awake()
+        {
+            Init();
+        }
+
+        public void Init()
+        {
+            _gameState.CurrentStage.Subscribe(_ => UpdateActiveEnemies()).AddTo(gameObject);
+            _activeEnemies = _levelStageHandler.GetNextStage().CreatedEnemies;
         }
 
         private void UpdateActiveEnemies()
@@ -30,7 +43,7 @@ namespace Core.Player.PlayerStates
                 foreach (var enemy in _activeEnemies)
                     enemy.Health.OnDie -= CheckEnemiesDeath;
             
-            _activeEnemies = _levelStageHandler.GetNextStage().Enemies;
+            _activeEnemies = _levelStageHandler.GetNextStage().CreatedEnemies;
             if(_activeEnemies == null)
                 return;
             

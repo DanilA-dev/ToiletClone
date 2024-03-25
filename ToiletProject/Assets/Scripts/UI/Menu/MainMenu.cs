@@ -27,22 +27,22 @@ namespace UI.Core.Menu
 
         private void StartCore()
         {
-            GameState.CurrentScene.Value = SceneType.Level_1;
+            _gameState.ChangeScene(SceneType.Level_1);
         }
         
         private void OpenShop()
         {
-            GameState.CurrentTab.Value = MenuType.ShopMenu;
+          _gameState.ChangeTab(MenuType.ShopMenu);
         }
 
         private void OpenSkins()
         {
-            GameState.CurrentTab.Value = MenuType.SkinsMenu;
+            _gameState.ChangeTab(MenuType.SkinsMenu);
         }
 
         private void OpenSettings()
         {
-            GameState.CurrentTab.Value = MenuType.SettingsMenu;
+            _gameState.ChangeTab(MenuType.SettingsMenu, MenuOpenSettings.OpenOnTop);
         }
 
         private void UpgradeHealth()

@@ -1,16 +1,12 @@
 ﻿using Systems;
-using Core.Level;
-using UniRx;
-using UnityEngine;
 
 namespace Core.Player.PlayerStates
 {
     public class PlayerBlockState : BasePlayerState
     {
-        private HealthSystem _playerHealth;
+        private readonly HealthSystem _playerHealth;
         
-        public PlayerBlockState(PlayerView view, LevelStageHandler stageHandler,
-            PlayerController playerController) : base(view, stageHandler, playerController)
+        public PlayerBlockState(PlayerView view, PlayerController playerController) : base(view, playerController)
         {
             _playerHealth = _playerController.GetComponent<HealthSystem>();
         }

@@ -3,16 +3,25 @@ using Systems;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 public class Loader : MonoBehaviour
 {
     [SerializeField] private Image _fillBar;
 
     private float _progress;
+    private GameState _gameState;
+    
+    [Inject]
+    private void Construct(GameState gameState)
+    {
+        _gameState = gameState;
+    }
+
     
     private void Start()
     {
-        StartCoroutine(LoadAsync(GameState.CurrentScene.Value));
+        StartCoroutine(LoadAsync(_gameState.LoadedScene));
     }
 
     private void Update()
@@ -31,7 +40,7 @@ public class Loader : MonoBehaviour
             if (asyncOperation.progress >= 0.9f)
                 break;
 
-            yield return null;
+            yield return new WaitForSeconds(0.5f);
         }
         asyncOperation.allowSceneActivation = true;
     }
