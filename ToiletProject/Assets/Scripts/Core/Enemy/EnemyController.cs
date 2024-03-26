@@ -6,6 +6,7 @@ using CustomFSM.Preicate;
 using CustomFSM.State;
 using Entity;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 namespace Core.Enemy
@@ -13,10 +14,12 @@ namespace Core.Enemy
     [RequireComponent(typeof(HealthSystem))]
     public class EnemyController : BaseFSMActor, ITarget
     {
+        [SerializeField] private NavMeshAgent navAgent;
         [SerializeField] private float _attackDist;
         [SerializeField] private EnemyView _view;
         [SerializeField] private EnemyAttackSerializeData _attackData;
         [SerializeField] private EnemyChaseSerializeData _chaseData;
+        [SerializeField] private TargetDetectionSystem _targetDetectionSystem;
 
         private ITarget _target;
         private HealthSystem _healthSystem;
@@ -25,18 +28,28 @@ namespace Core.Enemy
         private CountdownTimer _attackTimer;
         private List<BaseTimer> _timers;
 
+        private EnemyIdleState _idleState;
         private EnemyChaseState _chaseState;
         private EnemyAttackState _attackState;
         private EnemyDeadState _deadState;
         private EnemyCombatState _combatState;
         private bool _isAttacking;
 
+        #region Properties
+        public TargetEntity TargetEntity => TargetEntity.Enemy;
         public Transform Transform => transform;
         public HealthSystem Health => _healthSystem;
-        public override IState StartState => _chaseState;
+        public override IState StartState => _idleState;
+        public NavMeshAgent Agent => navAgent;
+
+        #endregion
+       
 
         private void Awake()
         {
+            InitStateMachine();
+            InitStatesAndTransitions();
+            
             _healthSystem = GetComponent<HealthSystem>();
             
             var delayTime = Random.Range(_attackData.MinBeforeAttackTime, _attackData.MaxBeforeAttackTime);
@@ -50,16 +63,13 @@ namespace Core.Enemy
             };
         }
 
-        public void Init(ITarget target)
-        {
-            _target = target;
-            InitStateMachine();
-            InitStatesAndTransitions();
-        }
 
         protected override void Update()
         {
             base.Update();
+
+            if (_targetDetectionSystem.TryFindTarget(out var target))
+                SetTarget(target);
             
             foreach (var timer in _timers)
                 timer.Tick(Time.deltaTime);
@@ -67,17 +77,27 @@ namespace Core.Enemy
 
         protected override void InitStatesAndTransitions()
         {
-            _chaseState = new EnemyChaseState(this,_target, _chaseData, _view);
-            _attackState = new EnemyAttackState(this,_target, _attackData, _view);
-            _deadState = new EnemyDeadState(this,_target, _view);
-            _combatState = new EnemyCombatState(this,_target, _view);
+            _idleState = new EnemyIdleState(this, _view);
+            _chaseState = new EnemyChaseState(this, _chaseData, _view);
+            _attackState = new EnemyAttackState(this, _attackData, _view);
+            _deadState = new EnemyDeadState(this, _view);
+            _combatState = new EnemyCombatState(this, _view);
             
+            AddTransition(_idleState, _chaseState, new FuncPredicate(() => _target != null));
             AddTransition(_chaseState, _combatState, new FuncPredicate((IsNearPlayer)));
             AddTransition(_combatState, _attackState, new FuncPredicate(() => _isAttacking));
             AddTransition(_attackState, _combatState, new FuncPredicate(() => !_isAttacking));
+            AddTransition(_combatState, _idleState, new FuncPredicate(() => _target != null && _target.Health.IsDead));
             AddAnyTransition(_deadState, new FuncPredicate(() => _healthSystem.IsDead));
             
-            _stateMachine.SetState(StartState);
+            StateMachine.SetState(StartState);
+        }
+
+        private void SetTarget(ITarget target)
+        {
+            _target = target;
+            _chaseState.SetTarget(target);
+            _attackState.SetTarget(target);
         }
 
         public void EnterCombat()
@@ -107,7 +127,15 @@ namespace Core.Enemy
         
         private bool IsNearPlayer()
         {
+            if (_target == null)
+                return false;
+            
             return Vector3.Distance(transform.position, _target.Transform.position) <= _attackDist;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            _targetDetectionSystem?.DrawGizmos();
         }
     }
 }

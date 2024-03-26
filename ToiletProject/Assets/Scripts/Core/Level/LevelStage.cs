@@ -16,7 +16,7 @@ namespace Core.Level
         [SerializeField] private Transform _getPoint;
         [SerializeField] private List<Transform> _enemiesPositions = new List<Transform>();
 
-        private EntitySpawner _entitySpawner;
+        private EnemySpawner _enemySpawner;
         
         private List<HealthSystem> _enemiesHealth = new List<HealthSystem>();
         private List<EnemyController> _createdEnemies = new List<EnemyController>();
@@ -32,21 +32,25 @@ namespace Core.Level
 
         #endregion
         
-        public void Init(EntitySpawner entitySpawner)
+        public void Init(EnemySpawner _entitySpawnerHandler)
         {
-            _entitySpawner = entitySpawner;
-            
-            FindEnemiesHealthSystems();
-            SubscribeToEnemyDeath();
+            _enemySpawner = _entitySpawnerHandler;
         }
 
         public void Activate()
         {
             for (int i = 0; i < _enemiesPositions.Count; i++)
             {
-                var newEnemy = _entitySpawner.SpawnEnemy(_enemiesPositions[i].position);
+                var pos = _enemiesPositions[i].position;
+                var newEnemy = _enemySpawner.SpawnEntity();
+                newEnemy.Agent.enabled = false;
+                newEnemy.transform.position = pos;
+                newEnemy.Agent.enabled = true;
                 _createdEnemies.Add(newEnemy);
             }
+            
+            FindEnemiesHealthSystems();
+            SubscribeToEnemyDeath();
         }
         
         private void SubscribeToEnemyDeath()
@@ -63,6 +67,8 @@ namespace Core.Level
 
         private void FindEnemiesHealthSystems()
         {
+            _enemiesHealth.Clear();
+            
             foreach (var enemy in _createdEnemies)
                 _enemiesHealth.Add(enemy.Health);
         }

@@ -16,7 +16,7 @@ namespace Core.Player
         private readonly string _attack3Anim = "Attack_3";
         private readonly string _damagedAnim = "Hit";
         private readonly string _blockAnim = "Block";
-        private int _dieHash = Animator.StringToHash("Die");
+        private readonly string _deathAnim = "Death";
 
         public void Run()
         {
@@ -52,7 +52,7 @@ namespace Core.Player
         
         public void Die()
         {
-            
+            _animator.CrossFade(_deathAnim, 0.1f);
         }
 
         public void Damaged()

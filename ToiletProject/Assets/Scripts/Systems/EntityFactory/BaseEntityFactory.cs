@@ -3,26 +3,20 @@ using Zenject;
 
 namespace Systems.EntityFactory
 {
-    public abstract class BaseEntityFactory<T> where T : Entity.Entity
+    public class BaseEntityFactory<T> where T : Entity.Entity
     {
-        private GameObject _prefab;
+        private T _prefab;
         private DiContainer _container;
 
-        [Inject]
-        private void Construct(DiContainer diContainer)
+        public BaseEntityFactory(DiContainer diContainer,T prefab)
         {
             _container = diContainer;
-        }
-
-        public BaseEntityFactory(GameObject prefab)
-        {
             _prefab = prefab;
         }
         
-        public GameObject SpawnEntity(Vector3 pos)
+        public GameObject CreateEntity()
         {
-            var newEntity = _container.InstantiatePrefab(_prefab );
-            newEntity.transform.position = pos;
+            var newEntity = _container.InstantiatePrefab(_prefab);
             return newEntity;
         }
     }

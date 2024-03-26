@@ -12,6 +12,8 @@ namespace CustomFSM.StateMachine
         private Dictionary<Type, StateNode> _stateDic = new Dictionary<Type, StateNode>();
         private HashSet<ITransition> _anyTransitions = new HashSet<ITransition>();
 
+        public StateNode CurrentStateNode => _currentStateNode;
+
         public void AddTransition(IState from, IState to, IPredicate condition)
         {
             GetOrAddNode(from).AddTransition(GetOrAddNode(to).State, condition);

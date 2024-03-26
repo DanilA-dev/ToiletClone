@@ -34,6 +34,9 @@ namespace Core.Player.PlayerStates
             _data.Agent.enabled = false;
         }
 
-        
+        public override string ToString()
+        {
+            return "Move";
+        }
     }
 }

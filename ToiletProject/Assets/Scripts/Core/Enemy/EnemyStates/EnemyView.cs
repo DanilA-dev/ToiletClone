@@ -9,7 +9,7 @@ namespace Core.Enemy
         private string _moveAnim = "Walk";
         private string _idleAnim = "Idle";
         private string _attackAnim = "Attack2";
-        private string _dieAnim = "Die";
+        private string _dieAnim = "Death";
 
         public void Move()
         {

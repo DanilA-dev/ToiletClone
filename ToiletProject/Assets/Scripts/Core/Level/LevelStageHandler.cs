@@ -2,6 +2,7 @@
 using System.Linq;
 using Systems;
 using Systems.EntityFactory;
+using Core.Enemy;
 using UnityEngine;
 using Zenject;
 
@@ -12,13 +13,13 @@ namespace Core.Level
         [SerializeField] private List<LevelStage> _levelStages = new List<LevelStage>();
 
         private GameState _gameState;
-        private EntitySpawner _entitySpawner;
+        private EnemySpawner _enemySpawner;
         
         [Inject]
-        private void Construct(GameState gameState, EntitySpawner entitySpawner)
+        private void Construct(GameState gameState, EnemySpawner enemySpawner)
         {
             _gameState = gameState;
-            _entitySpawner = entitySpawner;
+            _enemySpawner = enemySpawner;
         }
 
         private void Awake()
@@ -36,7 +37,7 @@ namespace Core.Level
         {
             foreach (var levelStage in _levelStages)
             {
-                levelStage.Init(_entitySpawner);
+                levelStage.Init(_enemySpawner);
                 levelStage.OnStageClear += OnStageClear;
             }
 

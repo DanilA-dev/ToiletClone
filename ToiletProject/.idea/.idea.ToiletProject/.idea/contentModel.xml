@@ -1379,18 +1379,21 @@
         </e>
         <e p="Resources" t="Include" />
         <e p="Scenes" t="Include">
+          <e p="Level_1" t="Include" />
           <e p="TestLevel" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
             <e p="Enemy" t="Include">
               <e p="EnemyController.cs" t="Include" />
+              <e p="EnemySpawner.cs" t="Include" />
               <e p="EnemyStates" t="Include">
                 <e p="BaseEnemyState.cs" t="Include" />
                 <e p="EnemyAttackState.cs" t="Include" />
                 <e p="EnemyChaseState.cs" t="Include" />
                 <e p="EnemyCombatState.cs" t="Include" />
                 <e p="EnemyDeadState.cs" t="Include" />
+                <e p="EnemyIdleState.cs" t="Include" />
                 <e p="EnemyView.cs" t="Include" />
                 <e p="StateSerializeData" t="Include">
                   <e p="EnemyAttackSerializeData.cs" t="Include" />
@@ -1409,17 +1412,18 @@
             <e p="Player" t="Include">
               <e p="PlayerActionReceiver.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
+              <e p="PlayerSpawner.cs" t="Include" />
               <e p="PlayerStates" t="Include">
                 <e p="BasePlayerState.cs" t="Include" />
                 <e p="PlayerAttackState.cs" t="Include" />
                 <e p="PlayerBlockState.cs" t="Include" />
                 <e p="PlayerCombatState.cs" t="Include" />
+                <e p="PlayerDeathState.cs" t="Include" />
                 <e p="PlayerMoveState.cs" t="Include" />
                 <e p="StateSerializeData" t="Include">
                   <e p="PlayerCombatSerializeData.cs" t="Include" />
                   <e p="PlayerMoveSerializeData.cs" t="Include" />
                 </e>
-                <e p="TargetController.cs" t="Include" />
               </e>
               <e p="PlayerView.cs" t="Include" />
             </e>
@@ -1444,6 +1448,7 @@
               <e p="ITransition.cs" t="Include" />
               <e p="StateMachine.cs" t="Include" />
               <e p="StateMachine.StateNode.cs" t="Include" />
+              <e p="StateMachineDebugger.cs" t="Include" />
               <e p="Transition.cs" t="Include" />
             </e>
             <e p="FSM_baseActor" t="Include">
@@ -1471,8 +1476,8 @@
             </e>
             <e p="EntityFactory" t="Include">
               <e p="BaseEntityFactory.cs" t="Include" />
+              <e p="BaseEntitySpawnerService.cs" t="Include" />
               <e p="EnemyFactory.cs" t="Include" />
-              <e p="EntitySpawner.cs" t="Include" />
               <e p="PlayerFactory.cs" t="Include" />
             </e>
             <e p="GameOverSystem" t="Include">
@@ -1488,6 +1493,7 @@
             </e>
             <e p="SaveDataController.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
+            <e p="TargetDetectionSystem.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="Menu" t="Include">

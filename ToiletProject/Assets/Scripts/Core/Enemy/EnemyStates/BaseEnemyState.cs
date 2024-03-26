@@ -6,13 +6,11 @@ namespace Core.Enemy.EnemyStates
     public abstract class BaseEnemyState : IState
     {
         protected readonly EnemyController _enemyController;
-        protected readonly ITarget Target;
         protected readonly EnemyView _view;
         
-        public BaseEnemyState(EnemyController enemyController,ITarget target, EnemyView view)
+        public BaseEnemyState(EnemyController enemyController,EnemyView view)
         {
             _enemyController = enemyController;
-            Target = target;
             _view = view;
         }
         

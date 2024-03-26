@@ -4,8 +4,8 @@ namespace Core.Enemy.EnemyStates
 {
     public class EnemyDeadState : BaseEnemyState
     {
-        public EnemyDeadState(EnemyController enemyController,ITarget target, EnemyView view)
-            : base(enemyController,target, view)
+        public EnemyDeadState(EnemyController enemyController, EnemyView view)
+            : base(enemyController, view)
         {
         }
 
@@ -16,6 +16,11 @@ namespace Core.Enemy.EnemyStates
 
         public override void OnExit()
         {
+        }
+        
+        public override string ToString()
+        {
+            return "Dead";
         }
     }
 }

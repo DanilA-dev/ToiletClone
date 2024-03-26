@@ -1,9 +1,10 @@
 ﻿using Core.Player;
+using Zenject;
 
 namespace Systems.EntityFactory
 {
     public class PlayerFactory : BaseEntityFactory<PlayerController>
     {
-        public PlayerFactory(PlayerController prefab) : base(prefab.gameObject) {}
+        public PlayerFactory(DiContainer diContainer,PlayerController prefab) : base(diContainer,prefab) {}
     }
 }

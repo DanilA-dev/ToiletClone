@@ -6,8 +6,8 @@ namespace Core.Enemy.EnemyStates
     {
         private readonly EnemyController _enemy;
         
-        public EnemyCombatState(EnemyController enemyController,ITarget target, EnemyView view) 
-            : base(enemyController,target, view)
+        public EnemyCombatState(EnemyController enemyController, EnemyView view) 
+            : base(enemyController, view)
         {
             _enemy = enemyController;
         }
@@ -18,8 +18,14 @@ namespace Core.Enemy.EnemyStates
             _view.Idle();
         }
 
+        
         public override void OnExit()
         {
+        }
+        
+        public override string ToString()
+        {
+            return "Combat";
         }
     }
 }

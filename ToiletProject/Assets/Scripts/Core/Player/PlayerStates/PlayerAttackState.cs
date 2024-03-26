@@ -34,5 +34,10 @@ namespace Core.Player.PlayerStates
         public override void OnExit()
         {
         }
+        
+        public override string ToString()
+        {
+            return "Attack";
+        }
     }
 }

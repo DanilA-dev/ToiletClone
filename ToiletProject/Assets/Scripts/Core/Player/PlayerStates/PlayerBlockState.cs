@@ -21,5 +21,10 @@ namespace Core.Player.PlayerStates
         {
             _playerHealth.SetDamagable(true);
         }
+        
+        public override string ToString()
+        {
+            return "Block";
+        }
     }
 }

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5406864768113592060}
+  - component: {fileID: 8815348137410301916}
   - component: {fileID: 1574313059192801022}
   - component: {fileID: 7038756260247555817}
   - component: {fileID: 1609447630238430667}
@@ -36,6 +37,29 @@ Transform:
   - {fileID: 1685670289732743195}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8815348137410301916
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725770476903665146}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
+  m_Height: 2.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &1574313059192801022
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -70,20 +94,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961e4d1402a50ce46a98ae5250e1ff3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _addDebugger: 1
+  navAgent: {fileID: 1574313059192801022}
   _attackDist: 1.2
   _view: {fileID: 5891136545523825357}
   _attackData:
-    <EnemyTransform>k__BackingField: {fileID: 5406864768113592060}
     <RotateSpeed>k__BackingField: 1000
     <MinBeforeAttackTime>k__BackingField: 0.5
     <MaxBeforeAttackTime>k__BackingField: 1.5
     <AttackTime>k__BackingField: 0.85
     <MinAttackCooldown>k__BackingField: 1
     <MaxAttackCooldown>k__BackingField: 0
-    <Damage>k__BackingField: 1
+    <Damage>k__BackingField: 2
   _chaseData:
-    <Agent>k__BackingField: {fileID: 1574313059192801022}
     <Speed>k__BackingField: 3
+  _targetDetectionSystem:
+    _targetToTrack: 0
+    _baseTransform: {fileID: 5406864768113592060}
+    _radiusCheck: 20
 --- !u!114 &1609447630238430667
 MonoBehaviour:
   m_ObjectHideFlags: 0

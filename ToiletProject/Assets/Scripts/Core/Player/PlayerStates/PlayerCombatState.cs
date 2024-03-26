@@ -1,6 +1,4 @@
-﻿using Core.Enemy;
-using Core.Interfaces;
-using UnityEngine;
+﻿using Core.Interfaces;
 
 namespace Core.Player.PlayerStates
 {
@@ -35,12 +33,16 @@ namespace Core.Player.PlayerStates
             if(_currentEnemy == null)
                 return;
 
-            var speed = _combatSerializeData.RotateSpeed * Time.deltaTime;
             _playerController.transform.LookAt(_currentEnemy.Transform);
         }
 
         public override void OnExit()
         {
+        }
+
+        public override string ToString()
+        {
+            return "Combat";
         }
     }
 }

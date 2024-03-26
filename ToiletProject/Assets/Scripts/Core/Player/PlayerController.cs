@@ -5,7 +5,6 @@ using Core.Player.PlayerStates;
 using Core.Player.PlayerStates.StateSerializeData;
 using CustomFSM.Preicate;
 using CustomFSM.State;
-using Data;
 using Data.PlayerStats;
 using Entity;
 using UnityEngine;
@@ -19,17 +18,20 @@ namespace Core.Player
         [SerializeField] private PlayerView _view;
         [SerializeField] private PlayerMoveSerializeData _moveStateData;
         [SerializeField] private PlayerCombatSerializeData _combatStateData;
+        [SerializeField] private TargetDetectionSystem _targetDetectionSystem;
         
         private PlayerMoveState _moveState;
         private PlayerCombatState _combatState;
         private PlayerAttackState _attackState;
         private PlayerBlockState _blockState;
-
-        private GameState _gameState;
+        private PlayerDeathState _deathState;
+        
+        
         private ILevelStageHandler _levelStageHandler;
+        private ITarget _target;
+        private GameState _gameState;
         private HealthSystem _healthSystem;
         private PlayerStatsData _playerStatsData;
-        private TargetController _targetController;
         private PlayerActionReceiver _actionReceiver;
         
         private bool _isAttacking;
@@ -37,6 +39,9 @@ namespace Core.Player
 
 
         #region Properties
+
+        private bool HasTarget => _target != null;
+        public TargetEntity TargetEntity => TargetEntity.Player;
         public Transform Transform => transform;
         public HealthSystem Health => _healthSystem;
         public override IState StartState => _moveState;
@@ -45,13 +50,12 @@ namespace Core.Player
 
         [Inject]
         private void Construct(GameState gameState, PlayerStatsData playerStatsData,
-            ILevelStageHandler levelStageHandler, TargetController targetController,
+            ILevelStageHandler levelStageHandler,
             PlayerActionReceiver actionReceiver)
         {
             _gameState = gameState;
             _actionReceiver = actionReceiver;
             _levelStageHandler = levelStageHandler;
-            _targetController = targetController;
             _playerStatsData = playerStatsData;
         }
 
@@ -68,11 +72,7 @@ namespace Core.Player
             InitStatesAndTransitions();
             
             _healthSystem.OnHealhChange += (cur, max) => _view.Damaged();
-            _targetController.OnTargetUpdate += SetTarget;
-            _healthSystem.OnDie += Die;
-            
-            SetTarget(_targetController.GetTarget());
-
+            _healthSystem.OnDie += OnPlayerDeath;
         }
      
         protected override void Update()
@@ -81,6 +81,14 @@ namespace Core.Player
                 return;
             
             base.Update();
+
+            FindTarget();
+        }
+
+        private void FindTarget()
+        {
+            if (_targetDetectionSystem.TryFindTarget(out var target))
+                SetTarget(target);
         }
 
         protected override void InitStatesAndTransitions()
@@ -89,31 +97,49 @@ namespace Core.Player
             _combatState = new PlayerCombatState(_view,  this, _combatStateData);
             _attackState = new PlayerAttackState(_view,  this, _playerStatsData);
             _blockState = new PlayerBlockState(_view, this);
+            _deathState = new PlayerDeathState(_view, this);
             
-            AddTransition(_moveState, _combatState, new FuncPredicate(IsNearStagePoint));
+            AddTransition(_moveState, _combatState, new FuncPredicate(() => HasTarget));
+            AddTransition(_combatState, _moveState, new FuncPredicate(() => !HasTarget));
             AddTransition(_combatState, _attackState, new FuncPredicate(() =>_actionReceiver.IsAttacking));
             AddTransition(_combatState, _blockState, new FuncPredicate(() => _actionReceiver.IsBlocking));
             AddTransition(_attackState, _combatState, new FuncPredicate(() => !_actionReceiver.IsAttacking));
             AddTransition(_blockState, _combatState, new FuncPredicate(() => !_actionReceiver.IsBlocking));
-            _stateMachine.SetState(StartState);
+            AddTransition(_combatState,_deathState, new FuncPredicate(() => _healthSystem.IsDead));
+            StateMachine.SetState(StartState);
         }
         
       
         private void SetTarget(ITarget newTarget)
         {
-            _combatState.SetEnemy(newTarget);
-            _attackState.SetEnemy(newTarget);
+            if(HasTarget)
+                return;
+            
+            _target = newTarget;
+            _target.Health.OnDie += ResetTarget;
+            _combatState.SetEnemy(_target);
+            _attackState.SetEnemy(_target);
         }
-        
+
+        private void ResetTarget()
+        {
+            _target.Health.OnDie -= ResetTarget;
+            _target = null;
+        }
+
         private bool IsNearStagePoint()
             => Vector3.Distance(transform.position, _levelStageHandler.GetNextStage().GetPoint.position) <= _moveStateData.StopDistance;
 
 
-        private void Die()
+        private void OnPlayerDeath()
         {
-            
+            _gameState.SetGameOver(GameOverType.Lose);
         }
-        
-        
+
+
+        private void OnDrawGizmosSelected()
+        {
+            _targetDetectionSystem.DrawGizmos();
+        }
     }
 }
