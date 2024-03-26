@@ -1,4 +1,5 @@
 ﻿using System;
+using Data.User;
 using UI.Core;
 using UI.Core.Menu;
 using UniRx;
@@ -16,13 +17,16 @@ namespace Systems
 
     public class GameOverController : MonoBehaviour
     {
-
+        [SerializeField] private int _defaultGoldForWinValue = 100;
+        
         private GameState _gameState;
+        private UserData _userData;
 
         [Inject]
-        private void Construct(GameState gameState)
+        private void Construct(GameState gameState, UserData userData)
         {
             _gameState = gameState;
+            _userData = userData;
         }
 
         private void Awake()
@@ -32,8 +36,13 @@ namespace Systems
 
         private void OnGameEnd(GameOverType type)
         {
-            _gameState.ChangeTab(type == GameOverType.Win ? MenuType.WinMenu 
-                : MenuType.LoseMenu, MenuOpenSettings.FullSwitch);
+            if (type == GameOverType.Win)
+            {
+                _userData.Money.Value += _defaultGoldForWinValue;
+                _gameState.ChangeTab(MenuType.WinMenu);
+            }
+            else
+                _gameState.ChangeTab(MenuType.LoseMenu);
         }
     }
 }

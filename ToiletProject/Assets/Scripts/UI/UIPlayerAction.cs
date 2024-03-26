@@ -12,12 +12,12 @@ namespace UI.Core
        
         public void OnPointerUp(PointerEventData eventData)
         {
-            MessageBroker.Default.Publish(new PlayerCoreAction(PlayerCoreActionType.None));
+            MessageBroker.Default.Publish(new PlayerCoreActionSignal(PlayerCoreActionType.None));
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            MessageBroker.Default.Publish(new PlayerCoreAction(_actionType));
+            MessageBroker.Default.Publish(new PlayerCoreActionSignal(_actionType));
         }
     }
 }

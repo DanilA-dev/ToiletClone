@@ -19,15 +19,15 @@ namespace Core.Player
 
         private void Awake()
         {
-            MessageBroker.Default.Receive<PlayerCoreAction>()
+            MessageBroker.Default.Receive<PlayerCoreActionSignal>()
                 .Where(a => a.PlayerCoreActionType == PlayerCoreActionType.Attack)
                 .Subscribe(s => AttackSignalInvoke()).AddTo(gameObject);
             
-            MessageBroker.Default.Receive<PlayerCoreAction>()
+            MessageBroker.Default.Receive<PlayerCoreActionSignal>()
                 .Where(a => a.PlayerCoreActionType == PlayerCoreActionType.Block)
                 .Subscribe(s => BlockSignalInvoke()).AddTo(gameObject);
             
-            MessageBroker.Default.Receive<PlayerCoreAction>()
+            MessageBroker.Default.Receive<PlayerCoreActionSignal>()
                 .Where(a => a.PlayerCoreActionType == PlayerCoreActionType.None)
                 .Subscribe(s => NoActionSignalInvoke()).AddTo(gameObject);
             

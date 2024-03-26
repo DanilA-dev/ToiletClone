@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5493499394394992462}
+  - component: {fileID: 6634135201791938731}
   m_Layer: 5
   m_Name: CoinView
   m_TagString: Untagged
@@ -112,6 +113,19 @@ RectTransform:
   m_AnchoredPosition: {x: 719.7778, y: 1797.9999}
   m_SizeDelta: {x: 386.3203, y: 259.0659}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6634135201791938731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090680901889742052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038cd4ff3a3b47fa96db8cb30c614921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moneyText: {fileID: 1521143698670154011}
 --- !u!1 &6149301867025175645
 GameObject:
   m_ObjectHideFlags: 0

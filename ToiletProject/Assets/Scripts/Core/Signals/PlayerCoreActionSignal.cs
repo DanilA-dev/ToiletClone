@@ -7,11 +7,11 @@
         Block = 2
     }
     
-    public class PlayerCoreAction
+    public sealed class PlayerCoreActionSignal
     {
         public PlayerCoreActionType PlayerCoreActionType { get; private set; }
         
-        public PlayerCoreAction(PlayerCoreActionType playerCoreActionType)
+        public PlayerCoreActionSignal(PlayerCoreActionType playerCoreActionType)
         {
             PlayerCoreActionType = playerCoreActionType;
         }

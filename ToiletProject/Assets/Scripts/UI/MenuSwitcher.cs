@@ -30,6 +30,11 @@ namespace UI.Core
             _gameState.OnTabChanged += ChangeTab;
         }
 
+        private void OnDestroy()
+        {
+            _gameState.OnTabChanged -= ChangeTab;
+        }
+
         private void ChangeTab(MenuType menu, MenuOpenSettings settings)
         {
             switch (settings)

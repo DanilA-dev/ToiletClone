@@ -1428,7 +1428,7 @@
               <e p="PlayerView.cs" t="Include" />
             </e>
             <e p="Signals" t="Include">
-              <e p="PlayerCoreAction.cs" t="Include" />
+              <e p="PlayerCoreActionSignal.cs" t="Include" />
             </e>
           </e>
           <e p="Extensions-Helpers" t="Include">
@@ -1508,6 +1508,7 @@
               <e p="WinMenu.cs" t="Include" />
             </e>
             <e p="MenuSwitcher.cs" t="Include" />
+            <e p="MoneyView.cs" t="Include" />
             <e p="UIPlayerAction.cs" t="Include" />
             <e p="WorldSpaceHealthBar.cs" t="Include" />
           </e>
