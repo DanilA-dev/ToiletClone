@@ -35,7 +35,6 @@ namespace Core.Enemy.EnemyStates
         {
             _agent.isStopped = true;
             _agent.updateRotation = false;
-            _agent.enabled = false;
         }
         
         public override string ToString()

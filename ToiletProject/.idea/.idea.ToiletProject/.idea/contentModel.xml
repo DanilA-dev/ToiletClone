@@ -1470,6 +1470,13 @@
             <e p="UserData.cs" t="Include" />
           </e>
           <e p="Systems" t="Include">
+            <e p="CameraTargetSystem" t="Include">
+              <e p="CinemachineTargetGroupHandler.cs" t="Include" />
+              <e p="Signals" t="Include">
+                <e p="CameraTargetAddedtSignal.cs" t="Include" />
+                <e p="CameraTargetRemovetSignal.cs" t="Include" />
+              </e>
+            </e>
             <e p="DataServiceSystem" t="Include">
               <e p="IDataService.cs" t="Include" />
               <e p="JSONDataService.cs" t="Include" />
@@ -1482,9 +1489,6 @@
             </e>
             <e p="GameOverSystem" t="Include">
               <e p="GameOverController.cs" t="Include" />
-              <e p="Signals" t="Include">
-                <e p="GameOverSignal.cs" t="Include" />
-              </e>
             </e>
             <e p="HealthSystem.cs" t="Include" />
             <e p="PlayerUpgradeSystem" t="Include">

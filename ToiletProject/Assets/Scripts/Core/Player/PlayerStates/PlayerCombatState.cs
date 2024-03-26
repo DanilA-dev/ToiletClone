@@ -1,4 +1,5 @@
 ﻿using Core.Interfaces;
+using UnityEngine;
 
 namespace Core.Player.PlayerStates
 {
@@ -33,7 +34,7 @@ namespace Core.Player.PlayerStates
             if(_currentEnemy == null)
                 return;
 
-            _playerController.transform.LookAt(_currentEnemy.Transform);
+            _playerController.transform.RotateTowardsByAxis(_currentEnemy.Transform, Vector3.up, _combatSerializeData.RotateSpeed);
         }
 
         public override void OnExit()

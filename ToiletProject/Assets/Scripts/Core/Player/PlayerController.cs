@@ -1,4 +1,5 @@
-﻿using Systems;
+﻿using System.Threading.Tasks;
+using Systems;
 using Core.Interfaces;
 using Core.Level;
 using Core.Player.PlayerStates;
@@ -7,6 +8,7 @@ using CustomFSM.Preicate;
 using CustomFSM.State;
 using Data.PlayerStats;
 using Entity;
+using UniRx;
 using UnityEngine;
 using Zenject;
 
@@ -77,11 +79,7 @@ namespace Core.Player
      
         protected override void Update()
         {
-            if(_gameState.IsGameOver)
-                return;
-            
             base.Update();
-
             FindTarget();
         }
 
@@ -100,7 +98,7 @@ namespace Core.Player
             _deathState = new PlayerDeathState(_view, this);
             
             AddTransition(_moveState, _combatState, new FuncPredicate(() => HasTarget));
-            AddTransition(_combatState, _moveState, new FuncPredicate(() => !HasTarget));
+            AddTransition(_combatState, _moveState, new FuncPredicate(() => !HasTarget && !_gameState.IsGameOver));
             AddTransition(_combatState, _attackState, new FuncPredicate(() =>_actionReceiver.IsAttacking));
             AddTransition(_combatState, _blockState, new FuncPredicate(() => _actionReceiver.IsBlocking));
             AddTransition(_attackState, _combatState, new FuncPredicate(() => !_actionReceiver.IsAttacking));
@@ -119,17 +117,16 @@ namespace Core.Player
             _target.Health.OnDie += ResetTarget;
             _combatState.SetEnemy(_target);
             _attackState.SetEnemy(_target);
+            MessageBroker.Default.Publish(new CameraTargetAddedtSignal(_target));
         }
 
-        private void ResetTarget()
+        private async void ResetTarget()
         {
             _target.Health.OnDie -= ResetTarget;
+            await Task.Yield();
+            MessageBroker.Default.Publish(new CameraTargetRemovetSignal(_target));
             _target = null;
         }
-
-        private bool IsNearStagePoint()
-            => Vector3.Distance(transform.position, _levelStageHandler.GetNextStage().GetPoint.position) <= _moveStateData.StopDistance;
-
 
         private void OnPlayerDeath()
         {

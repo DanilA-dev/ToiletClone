@@ -14,8 +14,9 @@ namespace Core.Enemy
     [RequireComponent(typeof(HealthSystem))]
     public class EnemyController : BaseFSMActor, ITarget
     {
-        [SerializeField] private NavMeshAgent navAgent;
         [SerializeField] private float _attackDist;
+        [SerializeField] private float _rotationSpeed;
+        [SerializeField] private NavMeshAgent _navAgent;
         [SerializeField] private EnemyView _view;
         [SerializeField] private EnemyAttackSerializeData _attackData;
         [SerializeField] private EnemyChaseSerializeData _chaseData;
@@ -40,7 +41,9 @@ namespace Core.Enemy
         public Transform Transform => transform;
         public HealthSystem Health => _healthSystem;
         public override IState StartState => _idleState;
-        public NavMeshAgent Agent => navAgent;
+        public NavMeshAgent Agent => _navAgent;
+        public float RotationSpeed => _rotationSpeed;
+        private bool IsPlayerDead => _target != null && _target.Health.IsDead;
 
         #endregion
        
@@ -79,15 +82,15 @@ namespace Core.Enemy
         {
             _idleState = new EnemyIdleState(this, _view);
             _chaseState = new EnemyChaseState(this, _chaseData, _view);
-            _attackState = new EnemyAttackState(this, _attackData, _view);
+            _attackState = new EnemyAttackState(this, _view);
             _deadState = new EnemyDeadState(this, _view);
             _combatState = new EnemyCombatState(this, _view);
             
-            AddTransition(_idleState, _chaseState, new FuncPredicate(() => _target != null));
-            AddTransition(_chaseState, _combatState, new FuncPredicate((IsNearPlayer)));
+            AddTransition(_idleState, _chaseState, new FuncPredicate(() => !IsPlayerDead && _target != null));
+            AddTransition(_chaseState, _combatState, new FuncPredicate(() => !IsPlayerDead && IsNearPlayer()));
             AddTransition(_combatState, _attackState, new FuncPredicate(() => _isAttacking));
             AddTransition(_attackState, _combatState, new FuncPredicate(() => !_isAttacking));
-            AddTransition(_combatState, _idleState, new FuncPredicate(() => _target != null && _target.Health.IsDead));
+            AddTransition(_combatState, _idleState, new FuncPredicate(() => IsPlayerDead));
             AddAnyTransition(_deadState, new FuncPredicate(() => _healthSystem.IsDead));
             
             StateMachine.SetState(StartState);
@@ -97,7 +100,7 @@ namespace Core.Enemy
         {
             _target = target;
             _chaseState.SetTarget(target);
-            _attackState.SetTarget(target);
+            _combatState.SetTarget(target);
         }
 
         public void EnterCombat()
