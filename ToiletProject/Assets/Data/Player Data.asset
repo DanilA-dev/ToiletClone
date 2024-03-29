@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336e1f877e801234cade202ad6da043f, type: 3}
   m_Name: Player Data
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _damage: 2
+  _playerStats:
+  - _currentValue: 2
+    <Type>k__BackingField: 0
+    <MinValue>k__BackingField: 1
+    <MaxValue>k__BackingField: 100
+  - _currentValue: 20
+    <Type>k__BackingField: 1
+    <MinValue>k__BackingField: 20
+    <MaxValue>k__BackingField: 200

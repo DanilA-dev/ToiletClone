@@ -2,10 +2,10 @@
 {
     public class PlayerUpgradeSingal
     {
-        public PlayerUpgradeType UpgradeType { get; private set; }
-        public PlayerUpgradeSingal(PlayerUpgradeType upgradeType)
+        public PlayerStatType StatType { get; private set; }
+        public PlayerUpgradeSingal(PlayerStatType statType)
         {
-            UpgradeType = upgradeType;
+            StatType = statType;
         }
 
     }

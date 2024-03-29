@@ -1,6 +1,5 @@
-﻿using Core.Enemy;
+﻿using Systems;
 using Core.Interfaces;
-using Data;
 using Data.PlayerStats;
 
 namespace Core.Player.PlayerStates
@@ -28,7 +27,8 @@ namespace Core.Player.PlayerStates
         private void AttackEnemy()
         {
             _view.Attack();
-            _currentEnemy.Health.Damage(_statsData.Damage);
+            var damageStat = _statsData.GetStatValueByType(PlayerStatType.Damage);
+            _currentEnemy.Health.Damage(damageStat.CurrentValue);
         }
         
         public override void OnExit()

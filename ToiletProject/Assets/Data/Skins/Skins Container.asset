@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015be52bfb8049b780dc8867d24094d4, type: 3}
-  m_Name: User Data
+  m_Script: {fileID: 11500000, guid: 9ce4d93948ac47dd9d272e2a83ede2f3, type: 3}
+  m_Name: Skins Container
   m_EditorClassIdentifier: 
-  _playerCurrencies:
-  - <Type>k__BackingField: 0
-    <DefaultValue>k__BackingField: 50
-    <CurrentValue>k__BackingField: 0
+  _skinDatas:
+  - {fileID: 11400000, guid: e411359f626f99749b7332e6a763fa5a, type: 2}

@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015be52bfb8049b780dc8867d24094d4, type: 3}
-  m_Name: User Data
+  m_Script: {fileID: 11500000, guid: 58db44a32f4e4e73b8c9d6cc5aadf151, type: 3}
+  m_Name: Player Stats Upgrade Data Container
   m_EditorClassIdentifier: 
-  _playerCurrencies:
-  - <Type>k__BackingField: 0
-    <DefaultValue>k__BackingField: 50
-    <CurrentValue>k__BackingField: 0
+  _upgrades:
+  - {fileID: 11400000, guid: f6445796e4c5978448fbc2e4fdb27dac, type: 2}
+  - {fileID: 11400000, guid: 219855c4f7d15da4dbbb9639d8122867, type: 2}

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Systems;
 using UnityEngine;
 
 namespace Data.PlayerStats
@@ -5,18 +7,11 @@ namespace Data.PlayerStats
     [CreateAssetMenu(menuName = "Data/PlayerData")]
     public class PlayerStatsData : ScriptableObject
     {
-        [SerializeField] private int _maxHealth;
-        [SerializeField] private int _damage;
+        [SerializeField] private List<PlayerStatValue> _playerStats;
+       
+        public List<PlayerStatValue> PlayerStats => _playerStats;
 
-        public int MaxHealth => _maxHealth;
-        public int Damage => _damage;
-
-        public void IncreaseDamage() => _damage++;
-        public void IncreaseMaxHealth() => _maxHealth++;
-        public void SetDamage(int newDamage) => _damage = newDamage;
-        public void SetMaxHealth(int newHealth) => _maxHealth = newHealth;
+        public PlayerStatValue GetStatValueByType(PlayerStatType type)
+            => _playerStats.Find(p => p.Type == type);
     }
-    
-    
-    
 }

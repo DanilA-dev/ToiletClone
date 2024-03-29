@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Systems;
 using Core.Interfaces;
 using Core.Level;
@@ -66,10 +67,17 @@ namespace Core.Player
            Init();
         }
 
+        private void OnDestroy()
+        {
+            _healthSystem.OnHealhChange -= (cur, max) => _view.Damaged();
+            _healthSystem.OnDie -= OnPlayerDeath;
+        }
+
         private void Init()
         {
+            var healthStat = _playerStatsData.GetStatValueByType(PlayerStatType.MaxHealth);
             _healthSystem = GetComponent<HealthSystem>();
-            _healthSystem.SetMaxHealth(_playerStatsData.MaxHealth);
+            _healthSystem.SetMaxHealth(healthStat.CurrentValue);
             InitStateMachine();
             InitStatesAndTransitions();
             

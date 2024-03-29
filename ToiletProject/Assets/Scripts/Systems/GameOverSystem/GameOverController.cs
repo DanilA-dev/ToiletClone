@@ -20,13 +20,13 @@ namespace Systems
         [SerializeField] private int _defaultGoldForWinValue = 100;
         
         private GameState _gameState;
-        private UserData _userData;
+        private ICurrencyProvider _currencyProvider;
 
         [Inject]
-        private void Construct(GameState gameState, UserData userData)
+        private void Construct(GameState gameState, ICurrencyProvider currencyProvider)
         {
             _gameState = gameState;
-            _userData = userData;
+            _currencyProvider = currencyProvider;
         }
 
         private void Awake()
@@ -38,7 +38,8 @@ namespace Systems
         {
             if (type == GameOverType.Win)
             {
-                _userData.Money.Value += _defaultGoldForWinValue;
+                var goldCurrency = _currencyProvider.GetCurrencyByType(CurrencyType.Gold);
+                goldCurrency?.Deposit(_defaultGoldForWinValue);
                 _gameState.ChangeTab(MenuType.WinMenu);
             }
             else

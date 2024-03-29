@@ -3050,6 +3050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5127130336407235176}
+  - component: {fileID: 8943288892682933530}
   m_Layer: 0
   m_Name: Skins
   m_TagString: Untagged
@@ -3073,6 +3074,18 @@ Transform:
   - {fileID: 5483101536822932468}
   m_Father: {fileID: 4002613969338206119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8943288892682933530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980865071448924699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86382ce51c7c48c194d0cef9f29d9fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7080626433042139354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,6 +3352,7 @@ GameObject:
   - component: {fileID: 5483101536822932468}
   - component: {fileID: 6487855305536668539}
   - component: {fileID: 5431092800964141484}
+  - component: {fileID: 2042475227171971145}
   m_Layer: 0
   m_Name: CameraMan_view
   m_TagString: Untagged
@@ -3400,6 +3414,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 6487855305536668539}
+--- !u!114 &2042475227171971145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7550114255262619780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5492e59831b348e48777ca9a472cdf31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinData: {fileID: 11400000, guid: e411359f626f99749b7332e6a763fa5a, type: 2}
 --- !u!1 &7699773623727519296
 GameObject:
   m_ObjectHideFlags: 0

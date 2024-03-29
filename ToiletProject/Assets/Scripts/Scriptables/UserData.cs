@@ -1,5 +1,5 @@
-﻿using Data.Skins;
-using UniRx;
+﻿using System.Collections.Generic;
+using Systems;
 using UnityEngine;
 
 namespace Data.User
@@ -7,6 +7,8 @@ namespace Data.User
     [CreateAssetMenu(menuName = "Data/User Data")]
     public class UserData : ScriptableObject
     {
-        public ReactiveProperty<int> Money = new ReactiveProperty<int>();
+        [SerializeField] private List<Currency> _playerCurrencies;
+
+        public IReadOnlyList<Currency> PlayerCurrencies => _playerCurrencies;
     }
 }

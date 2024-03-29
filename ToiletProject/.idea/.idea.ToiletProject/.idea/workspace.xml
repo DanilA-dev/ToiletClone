@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,20 +23,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d545f1e-22dc-4840-9e7d-a9a06080bd1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MoneyView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MoneyView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatValue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatValue.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinsContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinsContainer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatUpgradeData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatUpgradeData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatsUpgradeDataContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatsUpgradeDataContainer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/Currency.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/Currency.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/CurrencyProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/CurrencyProvider.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/Signals.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/Signals/SkinUseSignal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/Signals/SkinUseSignal.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/SkinInitializerHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/SkinInitializerHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/SkinView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/SkinView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/SkinsHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/SkinsHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/SkinsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/SkinsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SkinMenu.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SkinMenu/UISkinItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SkinMenu/UISkinItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMoneyView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/speakerMan/SpeakerManSmall.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/speakerMan/SpeakerManSmall.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/tvMan/TvMan.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/tvMan/TvMan.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Player Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Player Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Skin_1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Skin_1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/User Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/User Data.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/MainMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/MainMenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerActionReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerActionReceiver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Signals/PlayerCoreAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Signals/PlayerCoreActionSignal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Signals/PlayerCoreAction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Signals/PlayerCoreActionSignal.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ProjectContext.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ProjectContext.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BootInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/BootInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/DataInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/DataInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatsData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatsData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/ScriptableObjectSavableData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/ScriptableObjectSavableData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/SkinData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/SkinData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinData.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UserData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverSystem/GameOverController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverSystem/GameOverController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIPlayerAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIPlayerAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/PlayerUpgradeSystem/PlayerUpgradeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/PlayerUpgradeSystem/PlayerUpgradeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/PlayerUpgradeSystem/PlayerUpgradeSingal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/PlayerUpgradeSystem/PlayerUpgradeSingal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MoneyView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MoneyView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMoneyView.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +88,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIMoneyView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/787ACC3C-9A4C-471B-A7D9-71300105AF24/9a/7d2cd6db/Int32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/105DA115-9EC9-496A-B931-0694C7B11DD2/3f/26782320/Func`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -55,41 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SaveDataSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SaveDataService.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/DataInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/ScriptableObjectSavableData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BootInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SceneLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Loader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/EntityFactory/PlayerFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/EntityFactory/EnemyFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/EntityFactory/EntitySpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/EntityFactory/EntitySpawnerHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interfaces/ITarget.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/TargetController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStageHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameplayInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/EntityFactory/BaseEntityFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/StateMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSM/StateMachineDebugger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerBlockState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerMoveState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSM_baseActor/BaseFSMActor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/TargetDetectionSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/StateSerializeData/EnemyChaseSerializeData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/EntityFactory/BaseEntitySpawnerService.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemySpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Level/LevelStage.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/BaseEnemyState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyIdleState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyDeadState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerDeathState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerCombatState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/StateSerializeData/EnemyAttackSerializeData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyCombatState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Enemy/EnemyStates/EnemyAttackState.cs" />
@@ -99,13 +109,48 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CameraTargetSystem/Signals/CameraTargetRemovetSignal.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CameraTargetSystem/Signals/CameraTargetAddedtSignal.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CameraTargetSystem/CinemachineTargetGroupHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Signals/PlayerCoreAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Signals/PlayerCoreActionSignal.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuSwitcher.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/ICommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/ICommadController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/UpgradePlayerSystem/UpgradeSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/UpgradePlayerSystem/Commands/UpgradeDamageCommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/IPlayerCommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/Interfaces/ICommandController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/Interfaces/IPlayerCommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/CommandController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/Curency.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/Currency.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/UserData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/CurrencyHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/CurrencyProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverSystem/GameOverController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/UpgradePlayerSystem/Commands/UpgradeDamagePlayerCommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerUpgradeData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BootInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatUpgradeData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatValue.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatsData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatsUpgradeDataContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoneyView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerAttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/PlayerUpgradeSystem/PlayerUpgradeService.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/SkinView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/SkinInitializerHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMoneyView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/SkinData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/Signals/SkinEquipSignal.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinsContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/DataInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/Signals/SkinBuySignal.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/Signals/SkinUseSignal.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SkinsSystem/SkinsHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/SkinMenu/UISkinItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu/SkinsMenu.cs" />
       </list>
     </option>
   </component>
@@ -228,21 +273,21 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="371" key="GridCell.Tab.3.right/0.0.1920.1032@0.0.1920.1032" timestamp="1711435536985" />
-    <state x="791" y="217" key="RiderGenerateDialog" timestamp="1711403647316">
+    <state x="791" y="217" key="RiderGenerateDialog" timestamp="1711746140639">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="791" y="217" key="RiderGenerateDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1711403647316" />
-    <state x="461" y="161" key="SettingsEditor" timestamp="1711489803359">
+    <state x="791" y="217" key="RiderGenerateDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1711746140639" />
+    <state x="461" y="161" key="SettingsEditor" timestamp="1711753183611">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="461" y="161" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1711489803359" />
+    <state x="461" y="161" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1711753183611" />
     <state x="92" y="92" width="1736" height="848" key="VCS.FileHistoryDialog" timestamp="1709587676492">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="92" y="92" width="1736" height="848" key="VCS.FileHistoryDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1709587676492" />
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1711491922037">
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1711753058482">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1711491922037" />
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1711753058482" />
   </component>
 </project>

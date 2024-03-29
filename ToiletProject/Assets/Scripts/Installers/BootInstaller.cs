@@ -13,6 +13,7 @@ namespace Installers
             Container.Bind<IDataService>().To<JSONDataService>().FromNew().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SaveDataController>().FromNew().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SceneLoader>().FromNew().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<CurrencyProvider>().FromNew().AsSingle().NonLazy();
         }
 
         private void Awake()

@@ -48,7 +48,10 @@
             <e p="Textures" t="Include" />
           </e>
         </e>
-        <e p="Data" t="Include" />
+        <e p="Data" t="Include">
+          <e p="Skins" t="Include" />
+          <e p="Upgrades" t="Include" />
+        </e>
         <e p="Models" t="Include">
           <e p="camera man" t="Include">
             <e p="Materials" t="Include" />
@@ -1465,8 +1468,15 @@
           <e p="Loader.cs" t="Include" />
           <e p="Scriptables" t="Include">
             <e p="PlayerStatsData.cs" t="Include" />
-            <e p="ScriptableObjectSavableData.cs" t="Include" />
-            <e p="SkinData.cs" t="Include" />
+            <e p="PlayerStatValue.cs" t="Include" />
+            <e p="Skins" t="Include">
+              <e p="SkinData.cs" t="Include" />
+              <e p="SkinsContainer.cs" t="Include" />
+            </e>
+            <e p="UpgradesData" t="Include">
+              <e p="PlayerStatsUpgradeDataContainer.cs" t="Include" />
+              <e p="PlayerStatUpgradeData.cs" t="Include" />
+            </e>
             <e p="UserData.cs" t="Include" />
           </e>
           <e p="Systems" t="Include">
@@ -1476,6 +1486,10 @@
                 <e p="CameraTargetAddedtSignal.cs" t="Include" />
                 <e p="CameraTargetRemovetSignal.cs" t="Include" />
               </e>
+            </e>
+            <e p="CurrencySystem" t="Include">
+              <e p="Currency.cs" t="Include" />
+              <e p="CurrencyProvider.cs" t="Include" />
             </e>
             <e p="DataServiceSystem" t="Include">
               <e p="IDataService.cs" t="Include" />
@@ -1497,6 +1511,14 @@
             </e>
             <e p="SaveDataController.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
+            <e p="SkinsSystem" t="Include">
+              <e p="Signals" t="Include">
+                <e p="SkinUseSignal.cs" t="Include" />
+              </e>
+              <e p="SkinInitializerHandler.cs" t="Include" />
+              <e p="SkinsHandler.cs" t="Include" />
+              <e p="SkinView.cs" t="Include" />
+            </e>
             <e p="TargetDetectionSystem.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
@@ -1505,10 +1527,14 @@
               <e p="CoreMenu.cs" t="Include" />
               <e p="LoseMenu.cs" t="Include" />
               <e p="MainMenu.cs" t="Include" />
+              <e p="SkinsMenu.cs" t="Include" />
               <e p="WinMenu.cs" t="Include" />
             </e>
             <e p="MenuSwitcher.cs" t="Include" />
-            <e p="MoneyView.cs" t="Include" />
+            <e p="SkinMenu" t="Include">
+              <e p="UISkinItem.cs" t="Include" />
+            </e>
+            <e p="UIMoneyView.cs" t="Include" />
             <e p="UIPlayerAction.cs" t="Include" />
             <e p="WorldSpaceHealthBar.cs" t="Include" />
           </e>

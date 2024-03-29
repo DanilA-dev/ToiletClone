@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dcf4d376314240bb8df9c320acc3ce, type: 3}
-  m_Name: Skin_1
+  m_Script: {fileID: 11500000, guid: 19eea1f2c2634d969d644c4acd39bba3, type: 3}
+  m_Name: HealthUpgrade
   m_EditorClassIdentifier: 
-  _id: bf3cecd0-2a2f-4a29-99d0-b0f95e7643db
-  _state: 0
+  <Type>k__BackingField: 1
+  <UpgradeValue>k__BackingField: 1
+  <CurrencType>k__BackingField: 0
+  <UpgradeCost>k__BackingField: 10

@@ -1,4 +1,5 @@
 ﻿using Systems;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,12 +48,12 @@ namespace UI.Core.Menu
 
         private void UpgradeHealth()
         {
-            
+            MessageBroker.Default.Publish(new PlayerUpgradeSingal(PlayerStatType.MaxHealth));
         }
 
         private void UpgradeAttack()
         {
-            
+            MessageBroker.Default.Publish(new PlayerUpgradeSingal(PlayerStatType.Damage));
         }
 
     }
