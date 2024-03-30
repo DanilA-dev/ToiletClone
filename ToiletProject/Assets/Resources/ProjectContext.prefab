@@ -47,6 +47,7 @@ MonoBehaviour:
   _playerStatsData: {fileID: 11400000, guid: d848d95259d029a4fad3db10d04af698, type: 2}
   _skinsContainer: {fileID: 11400000, guid: 31e08c5ee6c0dff4998b6ec0df5c48fc, type: 2}
   _statsUpgradeData: {fileID: 11400000, guid: 29f4851f2b1c44244ae5efe319420765, type: 2}
+  _levelsContainer: {fileID: 11400000, guid: d8f3dcbb593210e45bfc3bef09890de5, type: 2}
   _userData: {fileID: 11400000, guid: 8561556ec339877448a7424cebd40a4f, type: 2}
 --- !u!1 &4514810649269790593
 GameObject:

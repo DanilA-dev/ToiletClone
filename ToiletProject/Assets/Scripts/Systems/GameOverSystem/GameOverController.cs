@@ -1,5 +1,6 @@
 ﻿using System;
 using Data.User;
+using Scriptables.Levels;
 using UI.Core;
 using UI.Core.Menu;
 using UniRx;
@@ -41,6 +42,7 @@ namespace Systems
                 var goldCurrency = _currencyProvider.GetCurrencyByType(CurrencyType.Gold);
                 goldCurrency?.Deposit(_defaultGoldForWinValue);
                 _gameState.ChangeTab(MenuType.WinMenu);
+                _gameState.CurrentLevel.Value.SetState(LevelState.Completed);
             }
             else
                 _gameState.ChangeTab(MenuType.LoseMenu);

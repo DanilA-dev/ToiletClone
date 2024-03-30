@@ -13,6 +13,7 @@ namespace UI.Core.Menu
         [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _skinsButton;
         [SerializeField] private Button _shopButton;
+        [SerializeField] private Button _levelsButton;
         
         public override MenuType MenuType => MenuType.MainMenu;
 
@@ -24,6 +25,7 @@ namespace UI.Core.Menu
             _settingsButton?.onClick.AddListener(OpenSettings);
             _skinsButton?.onClick.AddListener(OpenSkins);
             _shopButton?.onClick.AddListener(OpenShop);
+            _levelsButton?.onClick.AddListener(OpenLevels);
         }
 
         private void StartCore()
@@ -46,6 +48,11 @@ namespace UI.Core.Menu
             _gameState.ChangeTab(MenuType.SettingsMenu, MenuOpenSettings.OpenOnTop);
         }
 
+        private void OpenLevels()
+        {
+            _gameState.ChangeTab(MenuType.LevelsMenu);
+        }
+        
         private void UpgradeHealth()
         {
             MessageBroker.Default.Publish(new PlayerUpgradeSingal(PlayerStatType.MaxHealth));

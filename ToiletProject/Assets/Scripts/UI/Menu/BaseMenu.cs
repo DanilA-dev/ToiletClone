@@ -13,7 +13,8 @@ namespace UI.Core.Menu
         LoseMenu = 4,
         ShopMenu = 5,
         SkinsMenu = 7,
-        SettingsMenu = 8
+        SettingsMenu = 8,
+        LevelsMenu = 9
     }
     
     public abstract class BaseMenu : MonoBehaviour

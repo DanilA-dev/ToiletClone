@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Data.Upgrades
 {
-    [CreateAssetMenu(menuName = "Data/Player Upgrades Container")]
+    [CreateAssetMenu(menuName = "Data/Player Upgrades/Upgrades Container")]
     public class PlayerStatsUpgradeDataContainer : ScriptableObject
     {
         [SerializeField] private List<PlayerStatUpgradeData> _upgrades;

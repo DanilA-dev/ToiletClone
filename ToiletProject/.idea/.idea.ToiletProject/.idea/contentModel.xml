@@ -52,6 +52,7 @@
           <e p="Skins" t="Include" />
           <e p="Upgrades" t="Include" />
         </e>
+        <e p="Materias" t="Include" />
         <e p="Models" t="Include">
           <e p="camera man" t="Include">
             <e p="Materials" t="Include" />
@@ -1467,6 +1468,10 @@
           </e>
           <e p="Loader.cs" t="Include" />
           <e p="Scriptables" t="Include">
+            <e p="Levels" t="Include">
+              <e p="LevelData.cs" t="Include" />
+              <e p="LevelsContainer.cs" t="Include" />
+            </e>
             <e p="PlayerStatsData.cs" t="Include" />
             <e p="PlayerStatValue.cs" t="Include" />
             <e p="Skins" t="Include">
@@ -1505,6 +1510,12 @@
               <e p="GameOverController.cs" t="Include" />
             </e>
             <e p="HealthSystem.cs" t="Include" />
+            <e p="LevelSystem" t="Include">
+              <e p="LevelHandler.cs" t="Include" />
+              <e p="Signals" t="Include">
+                <e p="LevelUseSignal.cs" t="Include" />
+              </e>
+            </e>
             <e p="PlayerUpgradeSystem" t="Include">
               <e p="PlayerUpgradeService.cs" t="Include" />
               <e p="PlayerUpgradeSingal.cs" t="Include" />
@@ -1522,9 +1533,13 @@
             <e p="TargetDetectionSystem.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="LevelsMenu" t="Include">
+              <e p="UILevelItem.cs" t="Include" />
+            </e>
             <e p="Menu" t="Include">
               <e p="BaseMenu.cs" t="Include" />
               <e p="CoreMenu.cs" t="Include" />
+              <e p="LevelsMenu.cs" t="Include" />
               <e p="LoseMenu.cs" t="Include" />
               <e p="MainMenu.cs" t="Include" />
               <e p="SkinsMenu.cs" t="Include" />

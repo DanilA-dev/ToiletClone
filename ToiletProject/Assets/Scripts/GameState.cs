@@ -1,5 +1,5 @@
 ﻿using System;
-using Data.User;
+using Scriptables.Levels;
 using UI.Core;
 using UI.Core.Menu;
 using UniRx;
@@ -9,6 +9,7 @@ namespace Systems
     public class GameState
     {
         public IntReactiveProperty CurrentStage = new IntReactiveProperty();
+        public ReactiveProperty<LevelData> CurrentLevel = new ReactiveProperty<LevelData>();
 
         public bool IsGameOver { get; private set; }
         public SceneType LoadedScene { get; private set; }
@@ -23,6 +24,14 @@ namespace Systems
         public void ChangeTab(MenuType type, MenuOpenSettings settings = MenuOpenSettings.FullSwitch) 
             => OnTabChanged?.Invoke(type, settings);
 
+        public void StartLevel()
+        {
+            if(CurrentLevel.Value == null)
+                return;
+            
+            ChangeScene(CurrentLevel.Value.LevelSceneName);
+        }
+        
         public void ChangeScene(SceneType sceneType)
         {
             IsGameOver = false;

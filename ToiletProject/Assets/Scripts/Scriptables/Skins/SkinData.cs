@@ -12,7 +12,7 @@ namespace Data.Skins
         Not_Equipped = 4
     }
     
-    [CreateAssetMenu(menuName = "Data/Skin Data")]
+    [CreateAssetMenu(menuName = "Data/Skins/New Skin")]
     public class SkinData : ScriptableObject
     {
         [SerializeField] private string _name;

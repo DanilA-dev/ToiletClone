@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Data.Upgrades
 {
     
-    [CreateAssetMenu(menuName = "Data/Player Upgrade")]
+    [CreateAssetMenu(menuName = "Data/Player Upgrades/New Upgrade")]
     public class PlayerStatUpgradeData : ScriptableObject
     {
         [field: SerializeField] public PlayerStatType Type { get; private set; }
