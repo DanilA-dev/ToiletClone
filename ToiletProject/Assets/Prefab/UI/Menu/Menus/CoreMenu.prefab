@@ -121,10 +121,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087249156581846751}
     m_Modifications:
+    - target: {fileID: 1337187242842444644, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1412155863753890901, guid: 2daff4a2227705a458a1ada47d14fd31,
         type: 3}
       propertyPath: m_Name
       value: UIBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ecf0597de9ede594db9fe4cd6fda5f88,
+        type: 3}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.83137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4075809055191289163, guid: 2daff4a2227705a458a1ada47d14fd31,
         type: 3}
@@ -255,10 +291,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087249156581846751}
     m_Modifications:
+    - target: {fileID: 1337187242842444644, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1412155863753890901, guid: 2daff4a2227705a458a1ada47d14fd31,
         type: 3}
       propertyPath: m_Name
       value: UIAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c52d96a06df85e94a908a035a877eea1,
+        type: 3}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.83137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922794628734451803, guid: 2daff4a2227705a458a1ada47d14fd31,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4075809055191289163, guid: 2daff4a2227705a458a1ada47d14fd31,
         type: 3}

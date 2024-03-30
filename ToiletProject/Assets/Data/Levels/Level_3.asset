@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3872126f6e9648aaa110de7c1e961b0e, type: 3}
   m_Name: Level_3
   m_EditorClassIdentifier: 
+  _name: as
   _levelIndex: 3
-  _state: 0
+  _icon: {fileID: 21300000, guid: 98521d68087e1574598b549c2f535c6a, type: 3}
+  _state: 1
   _levelCompleteToOpen: {fileID: 11400000, guid: 17c17031ee64f874a9685ac4bb0408ec,
     type: 2}
   _levelSceneName: 2

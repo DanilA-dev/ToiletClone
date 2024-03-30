@@ -1385,6 +1385,7 @@
         <e p="Resources" t="Include" />
         <e p="Scenes" t="Include">
           <e p="Level_1" t="Include" />
+          <e p="MainMenu" t="Include" />
           <e p="TestLevel" t="Include" />
         </e>
         <e p="Scripts" t="Include">
@@ -1496,10 +1497,6 @@
             <e p="CurrencySystem" t="Include">
               <e p="Currency.cs" t="Include" />
               <e p="CurrencyProvider.cs" t="Include" />
-            </e>
-            <e p="DataServiceSystem" t="Include">
-              <e p="IDataService.cs" t="Include" />
-              <e p="JSONDataService.cs" t="Include" />
             </e>
             <e p="EntityFactory" t="Include">
               <e p="BaseEntityFactory.cs" t="Include" />

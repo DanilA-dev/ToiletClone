@@ -1,6 +1,4 @@
-using System;
 using Systems;
-using Systems.DataServiceSystem;
 using UnityEngine;
 using Zenject;
 
@@ -13,7 +11,6 @@ namespace Installers
         public override void InstallBindings()
         {
             Container.Bind<GameState>().FromNew().AsSingle().NonLazy();
-            Container.Bind<IDataService>().To<JSONDataService>().FromNew().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SaveDataController>().FromNew().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SceneLoader>().FromNew().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<CurrencyProvider>().FromNew().AsSingle().NonLazy();
@@ -21,8 +18,8 @@ namespace Installers
 
         private void Awake()
         {
-            _saveDataController = Container.Resolve<SaveDataController>();
             Application.targetFrameRate = 60;
+            _saveDataController = Container.Resolve<SaveDataController>();
              _saveDataController.Load();
         }
 

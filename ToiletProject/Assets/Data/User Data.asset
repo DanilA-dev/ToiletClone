@@ -15,4 +15,4 @@ MonoBehaviour:
   _playerCurrencies:
   - <Type>k__BackingField: 0
     <DefaultValue>k__BackingField: 50
-    <CurrentValue>k__BackingField: 0
+    <CurrentValue>k__BackingField: 100

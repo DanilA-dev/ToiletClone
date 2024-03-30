@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skinDatas:
   - {fileID: 11400000, guid: e411359f626f99749b7332e6a763fa5a, type: 2}
+  - {fileID: 11400000, guid: 42a31f96a4f4d2140988a036404f5e47, type: 2}
+  - {fileID: 11400000, guid: 5b25c8bdd8f0fdf4dbdec63927283cda, type: 2}

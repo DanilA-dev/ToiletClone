@@ -4,6 +4,9 @@ using Data.User;
 using Scriptables.Levels;
 using UnityEngine;
 using Zenject;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Systems
 {
@@ -74,7 +77,6 @@ namespace Systems
 
         #endregion
 
-
         #region Load
 
         public void Load()
@@ -116,8 +118,17 @@ namespace Systems
         
 
         #endregion
-       
-       
+
+#if UNITY_EDITOR
+        [MenuItem("My Tools/Clear Save Data")]
+        public static void ClearData()
+        {
+            PlayerPrefs.DeleteAll();
+        }
+        
+#endif
+      
+        
         
     }
 }

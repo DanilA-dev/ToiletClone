@@ -54,6 +54,7 @@ namespace Core.Enemy
             InitStatesAndTransitions();
             
             _healthSystem = GetComponent<HealthSystem>();
+            _healthSystem.OnDie += OnDie;
             
             var delayTime = Random.Range(_attackData.MinBeforeAttackTime, _attackData.MaxBeforeAttackTime);
             _attackDelayTimer = new CountdownTimer(delayTime);
@@ -65,7 +66,6 @@ namespace Core.Enemy
                 _attackDelayTimer
             };
         }
-
 
         protected override void Update()
         {
@@ -127,6 +127,12 @@ namespace Core.Enemy
             _attackDelayTimer.Reset();
         }
 
+        private void OnDie()
+        {
+            _timers.ForEach(t => t.Stop());
+            _healthSystem.OnDie -= OnDie;
+        }
+        
         
         private bool IsNearPlayer()
         {

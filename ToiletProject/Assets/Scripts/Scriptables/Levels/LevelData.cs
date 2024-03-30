@@ -16,7 +16,9 @@ namespace Scriptables.Levels
     [CreateAssetMenu(menuName = "Data/Levels/New Level")]
     public class LevelData : ScriptableObject
     {
+        [SerializeField] private string _name;
         [SerializeField] private int _levelIndex;
+        [SerializeField] private Sprite _icon;
         [SerializeField] private LevelState _state;
         [SerializeField] private LevelData _levelCompleteToOpen;
         [SerializeField] private SceneType _levelSceneName;
@@ -28,6 +30,10 @@ namespace Scriptables.Levels
         public SceneType LevelSceneName => _levelSceneName;
 
         public LevelData LevelCompleteToOpen => _levelCompleteToOpen;
+
+        public string Name => _name;
+
+        public Sprite Icon => _icon;
 
         #endregion
 

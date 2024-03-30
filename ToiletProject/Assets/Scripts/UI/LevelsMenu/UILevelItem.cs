@@ -9,8 +9,10 @@ namespace UI.Core.LevelsMenu
 {
     public class UILevelItem : MonoBehaviour
     {
+        [SerializeField] private TMP_Text _levelName;
         [SerializeField] private TMP_Text _levelIndex;
         [SerializeField] private Image _selectBorder;
+        [SerializeField] private Image _levelIcon;
         [SerializeField] private Image _lockIcon;
         [SerializeField] private Button _useButton;
 
@@ -23,6 +25,8 @@ namespace UI.Core.LevelsMenu
             _data = data;
             _levelIndex.text = data.LevelIndex.ToString();
             _lockIcon.gameObject.SetActive(data.State == LevelState.Closed);
+            _levelName.text = data.State == LevelState.Closed ? "" : _data.Name;
+            _levelIcon.sprite = data.Icon;
             ToggleSelectBorder(data.State == LevelState.Selected);
         }
         
