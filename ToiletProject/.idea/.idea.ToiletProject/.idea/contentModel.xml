@@ -49,6 +49,7 @@
           </e>
         </e>
         <e p="Data" t="Include">
+          <e p="Levels" t="Include" />
           <e p="Skins" t="Include" />
           <e p="Upgrades" t="Include" />
         </e>

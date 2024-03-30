@@ -23,38 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d545f1e-22dc-4840-9e7d-a9a06080bd1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Levels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Levels/LevelData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Levels/LevelData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Levels/LevelsContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Levels/LevelsContainer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/LevelSystem.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/LevelSystem/LevelHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/LevelSystem/LevelHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/LevelSystem/Signals.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/LevelSystem/Signals/LevelUseSignal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/LevelSystem/Signals/LevelUseSignal.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LevelsMenu.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LevelsMenu/UILevelItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LevelsMenu/UILevelItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/LevelsMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/LevelsMenu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToiletProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/CoinView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/CoinView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/MainMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/UI/Menu/Menus/MainMenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ProjectContext.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ProjectContext.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/DataInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/DataInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinsContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/Skins/SkinsContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatUpgradeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatUpgradeData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatsUpgradeDataContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerStatsUpgradeDataContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverSystem/GameOverController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameOverSystem/GameOverController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/BaseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/BaseMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BootInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/BootInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatsData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatsData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptables/UserData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/Currency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/Currency.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/DataServiceSystem/JSONDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/DataServiceSystem/JSONDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/SaveDataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SaveDataController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Signals/PlayerCoreAction.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Signals/PlayerCoreActionSignal.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuSwitcher.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/ICommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/ICommadController.cs" />
@@ -89,15 +64,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/Interfaces/IPlayerCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CommandSystem/CommandController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/Curency.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/Currency.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/UserData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/CurrencyHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/CurrencyProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/UpgradePlayerSystem/Commands/UpgradeDamagePlayerCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/UpgradesData/PlayerUpgradeData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BootInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatValue.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatsData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoneyView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerStates/PlayerAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/PlayerUpgradeSystem/PlayerUpgradeService.cs" />
@@ -128,6 +99,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/LevelSystem/Signals/LevelSelectSignal.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LevelsMenu/UILevelItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu/LevelsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/PlayerStatsData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/DataServiceSystem/JSONDataService.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/BootInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/UserData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CurrencySystem/Currency.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SaveDataController.cs" />
       </list>
     </option>
   </component>
@@ -262,9 +239,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="92" y="92" width="1736" height="848" key="VCS.FileHistoryDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1709587676492" />
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1711792570863">
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1711808757524">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1711792570863" />
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1711808757524" />
   </component>
 </project>

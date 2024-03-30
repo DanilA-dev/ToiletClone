@@ -41,5 +41,11 @@ namespace Systems
             CurrentValue += value;
             OnValueChanged?.Invoke(CurrentValue);
         }
+
+        public void SetValue(int value)
+        {
+            CurrentValue = value;
+            OnValueChanged?.Invoke(CurrentValue);
+        }
     }
 }

@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 410087040}
   m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: de775e68983c4f344aaa032d44bc2b6f,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f353b8c22691edc4e9a2eef6a2778a86,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -599,7 +601,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &481998580
 Transform:
@@ -705,7 +707,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &732089311
 Transform:
@@ -1136,7 +1138,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1266848517
 Transform:
@@ -1369,6 +1371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sptp_building_03
       objectReference: {fileID: 0}
+    - target: {fileID: 151952, guid: 3247a876b9df76e4187d8ddffa5028cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 442750, guid: 3247a876b9df76e4187d8ddffa5028cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.112829
@@ -1510,7 +1516,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1693654193
 Transform:
@@ -1545,6 +1551,10 @@ PrefabInstance:
     - target: {fileID: 146384, guid: 0d41f7c400e70b14784c7dc6996384f2, type: 3}
       propertyPath: m_Name
       value: sptp_building_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 146384, guid: 0d41f7c400e70b14784c7dc6996384f2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 491874, guid: 0d41f7c400e70b14784c7dc6996384f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1608,6 +1618,10 @@ PrefabInstance:
     - target: {fileID: 148152, guid: c578b4309ba7d374a81ecb4ead9452b4, type: 3}
       propertyPath: m_Name
       value: sptp_building_17
+      objectReference: {fileID: 0}
+    - target: {fileID: 148152, guid: c578b4309ba7d374a81ecb4ead9452b4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 446386, guid: c578b4309ba7d374a81ecb4ead9452b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1677,7 +1691,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2011228215
 Transform:

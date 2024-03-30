@@ -8,7 +8,7 @@ namespace Systems.DataServiceSystem
     {
         public bool Save<T>(string path, T data)
         {
-            var relativePath = Application.persistentDataPath + path;
+            var relativePath = Application.persistentDataPath + path + ".json";
             try
             {
                 if(File.Exists(relativePath))
@@ -47,7 +47,7 @@ namespace Systems.DataServiceSystem
             var relativePath = Application.persistentDataPath + path;
             if (!File.Exists(relativePath))
             {
-                Debug.LogError($"File does not exist {relativePath}");
+                Debug.Log($" <color=red> File does not exist {relativePath} </color>");
                 throw new FileNotFoundException($"{path} does not exist");
             }
 

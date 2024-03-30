@@ -13,5 +13,7 @@ namespace Data.PlayerStats
 
         public PlayerStatValue GetStatValueByType(PlayerStatType type)
             => _playerStats.Find(p => p.Type == type);
+
+        public void SetStats(List<PlayerStatValue> newStats) => _playerStats = newStats;
     }
 }

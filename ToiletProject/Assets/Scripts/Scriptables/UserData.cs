@@ -10,5 +10,6 @@ namespace Data.User
         [SerializeField] private List<Currency> _playerCurrencies;
 
         public IReadOnlyList<Currency> PlayerCurrencies => _playerCurrencies;
+
     }
 }

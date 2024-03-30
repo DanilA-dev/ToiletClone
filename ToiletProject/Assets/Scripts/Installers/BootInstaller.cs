@@ -1,3 +1,4 @@
+using System;
 using Systems;
 using Systems.DataServiceSystem;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace Installers
 {
     public class BootInstaller : MonoInstaller
     {
+        private SaveDataController _saveDataController;
+        
         public override void InstallBindings()
         {
             Container.Bind<GameState>().FromNew().AsSingle().NonLazy();
@@ -18,7 +21,19 @@ namespace Installers
 
         private void Awake()
         {
+            _saveDataController = Container.Resolve<SaveDataController>();
             Application.targetFrameRate = 60;
+             _saveDataController.Load();
+        }
+
+        private void OnApplicationPause(bool pauseStatus)
+        {
+            _saveDataController.Save();
+        }
+
+        private void OnApplicationQuit()
+        {
+            _saveDataController.Save();
         }
     }
 
